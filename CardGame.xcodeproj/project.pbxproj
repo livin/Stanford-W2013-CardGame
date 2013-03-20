@@ -23,6 +23,11 @@
 		E7D4D4E416FA4F1F00408B8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D4D4BF16FA4F1F00408B8A /* Foundation.framework */; };
 		E7D4D4EC16FA4F1F00408B8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7D4D4EA16FA4F1F00408B8A /* InfoPlist.strings */; };
 		E7D4D4EF16FA4F1F00408B8A /* CardGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D4EE16FA4F1F00408B8A /* CardGameTests.m */; };
+		E7D4D4FA16FA504A00408B8A /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D4F916FA504A00408B8A /* Deck.m */; };
+		E7D4D4FB16FA509300408B8A /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D4F916FA504A00408B8A /* Deck.m */; };
+		E7D4D4FE16FA50C700408B8A /* DeckTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D4FD16FA50C700408B8A /* DeckTest.m */; };
+		E7D4D50116FA51D100408B8A /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D50016FA51D100408B8A /* Card.m */; };
+		E7D4D50216FA51D100408B8A /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D50016FA51D100408B8A /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,12 @@
 		E7D4D4EB16FA4F1F00408B8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7D4D4ED16FA4F1F00408B8A /* CardGameTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardGameTests.h; sourceTree = "<group>"; };
 		E7D4D4EE16FA4F1F00408B8A /* CardGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardGameTests.m; sourceTree = "<group>"; };
+		E7D4D4F816FA504A00408B8A /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		E7D4D4F916FA504A00408B8A /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		E7D4D4FC16FA50C700408B8A /* DeckTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckTest.h; sourceTree = "<group>"; };
+		E7D4D4FD16FA50C700408B8A /* DeckTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckTest.m; sourceTree = "<group>"; };
+		E7D4D4FF16FA51D100408B8A /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		E7D4D50016FA51D100408B8A /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +134,10 @@
 				E7D4D4D816FA4F1F00408B8A /* CardGameViewController.h */,
 				E7D4D4D916FA4F1F00408B8A /* CardGameViewController.m */,
 				E7D4D4C416FA4F1F00408B8A /* Supporting Files */,
+				E7D4D4F816FA504A00408B8A /* Deck.h */,
+				E7D4D4F916FA504A00408B8A /* Deck.m */,
+				E7D4D4FF16FA51D100408B8A /* Card.h */,
+				E7D4D50016FA51D100408B8A /* Card.m */,
 			);
 			path = CardGame;
 			sourceTree = "<group>";
@@ -147,6 +162,8 @@
 				E7D4D4ED16FA4F1F00408B8A /* CardGameTests.h */,
 				E7D4D4EE16FA4F1F00408B8A /* CardGameTests.m */,
 				E7D4D4E816FA4F1F00408B8A /* Supporting Files */,
+				E7D4D4FC16FA50C700408B8A /* DeckTest.h */,
+				E7D4D4FD16FA50C700408B8A /* DeckTest.m */,
 			);
 			path = CardGameTests;
 			sourceTree = "<group>";
@@ -274,6 +291,8 @@
 				E7D4D4CA16FA4F1F00408B8A /* main.m in Sources */,
 				E7D4D4CE16FA4F1F00408B8A /* CardGameAppDelegate.m in Sources */,
 				E7D4D4DA16FA4F1F00408B8A /* CardGameViewController.m in Sources */,
+				E7D4D4FA16FA504A00408B8A /* Deck.m in Sources */,
+				E7D4D50116FA51D100408B8A /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D4D4EF16FA4F1F00408B8A /* CardGameTests.m in Sources */,
+				E7D4D4FB16FA509300408B8A /* Deck.m in Sources */,
+				E7D4D4FE16FA50C700408B8A /* DeckTest.m in Sources */,
+				E7D4D50216FA51D100408B8A /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
