@@ -26,4 +26,17 @@
 	STAssertEquals((NSUInteger)1, [[deck cards] count], @"One card should be here now");
 }
 
+- (void)testAddCardAtTop
+{
+	Deck* deck = [[Deck alloc] init];
+
+	Card* cardOne = [[Card alloc] init];
+	Card* cardTwo = [[Card alloc] init];
+    
+	[deck addCard: cardOne atTop: NO];
+    [deck addCard: cardTwo atTop: YES];
+    
+    STAssertTrue([deck.cards objectAtIndex:0] == cardTwo, @"At the top must be card No. 2");
+}
+
 @end
