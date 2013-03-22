@@ -26,6 +26,11 @@
     card.rank = 12;
     card.suit = @"♥";
     STAssertEqualObjects([card contents], @"Q♥", @"Card with rank 12 should be Queen");
+    
+    card = [[PlayingCard alloc] init];
+    card.rank = 2;
+    card.suit = @"x";
+    STAssertEqualObjects([card contents], @"2?", @"The invalid suit should not be set");    
 }
 
 @end
