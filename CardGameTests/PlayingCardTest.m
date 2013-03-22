@@ -30,7 +30,16 @@
     card = [[PlayingCard alloc] init];
     card.rank = 2;
     card.suit = @"x";
-    STAssertEqualObjects([card contents], @"2?", @"The invalid suit should not be set");    
+    STAssertEqualObjects([card contents], @"2?", @"The invalid suit should not be set");
+    
+    card = [[PlayingCard alloc] init];
+    card.rank = 14;
+    STAssertEqualObjects([card contents], @"??", @"Rank should not be set to improper value");    
+}
+
+- (void) testMaxRank
+{
+    STAssertEquals((NSUInteger)13, [PlayingCard maxRank], @"Max rank of the playing card should be 13");
 }
 
 @end
