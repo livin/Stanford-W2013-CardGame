@@ -18,7 +18,11 @@
 }
 
 - (void) addCard: (Card*)card atTop:(BOOL)atTop {
-	// do nothing here yet.
+    if (atTop) {
+        [self.cards insertObject:card atIndex:0];
+    } else {
+        [self.cards addObject:card];
+    }
 }
 
 @end
