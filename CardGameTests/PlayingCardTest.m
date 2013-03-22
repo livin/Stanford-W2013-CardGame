@@ -15,8 +15,7 @@
 {
     PlayingCard* card = [[PlayingCard alloc] init];
     card.rank = 0;
-    card.suit = @"♦";
-    STAssertEqualObjects([card contents], @"?♦", @"Card with zero rank should be undefined card");
+    STAssertEqualObjects([card contents], @"??", @"Card with zero rank and no suit should be undefined card");
     
     card = [[PlayingCard alloc] init];
     card.rank = 1;
