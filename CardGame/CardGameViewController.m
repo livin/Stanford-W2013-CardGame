@@ -7,11 +7,14 @@
 //
 
 #import "CardGameViewController.h"
+#import "PlayingCardDeck.h"
 
 @interface CardGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *cardButton;
 @property (nonatomic) int flipCount;
+@property (strong, nonatomic) PlayingCardDeck* playingCardDeck;
 
 @end
 
@@ -25,7 +28,24 @@
 	NSLog(@"flips updated to %d", self.flipCount);
 }
 
+- (PlayingCardDeck*) playingCardDeck
+{
+	if (!_playingCardDeck) {
+		_playingCardDeck = [[PlayingCardDeck alloc] init];
+	}
+	return _playingCardDeck;
+}
+
+- (void) drawRandomCard
+{
+	Card* card = [self.playingCardDeck drawRandomCard];
+	if (card) {
+		[self.cardButton setTitle:[card contents] forState:UIControlStateSelected];
+	}
+}
+
 - (IBAction)flipCard:(UIButton *)sender {
+	[self drawRandomCard];
 	sender.selected = !sender.isSelected;
 	self.flipCount++;
 }

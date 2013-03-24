@@ -10,4 +10,6 @@
 
 @interface Card : NSObject
 
+- (NSString*) contents;
+
 @end

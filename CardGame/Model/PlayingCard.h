@@ -16,6 +16,4 @@
 @property (nonatomic) NSUInteger rank;
 @property (strong, nonatomic) NSString* suit;
 
-- (NSString*) contents;
-
 @end
