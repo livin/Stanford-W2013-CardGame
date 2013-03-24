@@ -10,20 +10,24 @@
 
 @interface CardGameViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
+@property (nonatomic) int flipCount;
+
 @end
 
 @implementation CardGameViewController
 
-- (void)viewDidLoad
+
+- (void) setFlipCount:(int)flipCount
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	_flipCount = flipCount;
+	self.flipsLabel.text = [NSString stringWithFormat: @"Flips: %d", self.flipCount];
+	NSLog(@"flips updated to %d", self.flipCount);
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)flipCard:(UIButton *)sender {
+	sender.selected = !sender.isSelected;
+	self.flipCount++;
 }
 
 @end
