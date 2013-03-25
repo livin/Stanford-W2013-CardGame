@@ -10,4 +10,9 @@
 
 @implementation Card
 
+- (NSString*) contents
+{
+	return nil; // should be defined in subclasses.
+}
+
 @end
