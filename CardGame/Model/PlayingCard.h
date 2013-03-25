@@ -13,6 +13,8 @@
 + (NSUInteger) maxRank;
 + (NSArray*)validSuits;
 
+- (id) initWithContents: (NSString*)contents;
+
 @property (nonatomic) NSUInteger rank;
 @property (strong, nonatomic) NSString* suit;
 

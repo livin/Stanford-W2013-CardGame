@@ -26,6 +26,24 @@
     return @[@"♥", @"♦", @"♠", @"♣"];
 }
 
+- (id) initWithContents: (NSString*)contents
+{
+	self = [self init];
+	
+	if (self) {
+		if (!([contents length] == 2)) {
+			return nil;
+		}
+		
+		NSString* rankString = [contents substringWithRange:NSMakeRange(0, 1)];
+		NSString* suit = [contents substringWithRange:NSMakeRange(1, 1)];
+		self.rank = [[PlayingCard rankStrings] indexOfObject:rankString];
+		self.suit = suit;
+	}
+	
+	return self;
+}
+
 - (NSString*) suit
 {
     return _suit?_suit:@"?";
