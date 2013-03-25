@@ -31,12 +31,13 @@
 	self = [self init];
 	
 	if (self) {
-		if (!([contents length] == 2)) {
+		NSUInteger length = [contents length];
+		if (!(length == 2 || length == 3)) {
 			return nil;
 		}
 		
-		NSString* rankString = [contents substringWithRange:NSMakeRange(0, 1)];
-		NSString* suit = [contents substringWithRange:NSMakeRange(1, 1)];
+		NSString* rankString = [contents substringWithRange:NSMakeRange(0, length-1)]; // rank is all first chars minus last one
+		NSString* suit = [contents substringWithRange:NSMakeRange(length-1, 1)]; // suit is last char
 		self.rank = [[PlayingCard rankStrings] indexOfObject:rankString];
 		self.suit = suit;
 	}

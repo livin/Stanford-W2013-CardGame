@@ -37,10 +37,13 @@
     STAssertEqualObjects([card contents], @"??", @"Rank should not be set to improper value");    
 }
 
-- (void) creationWithContents
+- (void) testCreationWithContents
 {
 	PlayingCard* card = [[PlayingCard alloc] initWithContents: @"A♦"];
-	STAssertEquals(@"A♦", [card contents], @"Initialized card should be A♦");
+	STAssertEqualObjects(@"A♦", [card contents], @"Initialized card should be A♦");
+	
+	card = [[PlayingCard alloc] initWithContents: @"10♦"];
+	STAssertEqualObjects(@"10♦", [card contents], @"Initialized card should be 10♦");
 }
 
 - (void) testMaxRank
