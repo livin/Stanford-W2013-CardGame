@@ -14,7 +14,7 @@
 - (void) testCardsCount
 {
     PlayingCardDeck* deck = [[PlayingCardDeck alloc] init];
-    STAssertEquals((NSUInteger)52, deck.cards.count, @"In playing card deck must be all 52 cards");
+    STAssertEquals((NSUInteger)52, [deck.cards count], @"In playing card deck must be all 52 cards");
 }
 
 @end

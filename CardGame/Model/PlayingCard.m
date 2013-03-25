@@ -18,7 +18,7 @@
 }
 
 + (NSUInteger) maxRank {
-    return [self rankStrings].count - 1;
+    return [[self rankStrings] count] - 1;
 }
 
 + (NSArray*)validSuits

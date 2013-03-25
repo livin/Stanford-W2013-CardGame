@@ -14,7 +14,7 @@
 
 - (void)testGetCardsForEmptyDeck {
 	Deck* deck = [[Deck alloc] init];
-	STAssertEquals((NSUInteger)0, deck.cards.count, @"There should be no cards in empty deck");
+	STAssertEquals((NSUInteger)0, [deck.cards count], @"There should be no cards in empty deck");
 }
 
 - (void)testAddCard
@@ -23,7 +23,7 @@
 	Card* card = [[Card alloc] init];
 		
 	[deck addCard: card atTop: YES];
-	STAssertEquals((NSUInteger)1, deck.cards.count, @"One card should be here now");
+	STAssertEquals((NSUInteger)1, [deck.cards count], @"One card should be here now");
 }
 
 - (void)testAddCardAtTop
@@ -49,9 +49,9 @@
 	[deck addCard: cardOne atTop: NO];
     [deck addCard: cardTwo atTop: NO];
     
-    STAssertEquals((NSUInteger)2, deck.cards.count, @"Should be 2 card in the deck at the beginning");
+    STAssertEquals((NSUInteger)2, [deck.cards count], @"Should be 2 card in the deck at the beginning");
 	[deck drawRandomCard];
-    STAssertEquals((NSUInteger)1, deck.cards.count, @"After draw random card - only 1 card must be left in the deck");
+    STAssertEquals((NSUInteger)1, [deck.cards count], @"After draw random card - only 1 card must be left in the deck");
 }
 
 @end
