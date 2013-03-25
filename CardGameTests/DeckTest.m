@@ -50,7 +50,7 @@
     [deck addCard: cardTwo atTop: NO];
     
     STAssertEquals((NSUInteger)2, deck.cards.count, @"Should be 2 card in the deck at the beginning");
-    Card* aRandomCard = [deck drawRandomCard];
+	[deck drawRandomCard];
     STAssertEquals((NSUInteger)1, deck.cards.count, @"After draw random card - only 1 card must be left in the deck");
 }
 
