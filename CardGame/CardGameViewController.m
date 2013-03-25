@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *cardButton;
 @property (nonatomic) int flipCount;
-@property (strong, nonatomic) PlayingCardDeck* playingCardDeck;
+@property (strong, nonatomic) Deck* deck;
 
 @end
 
@@ -28,17 +28,17 @@
 	NSLog(@"flips updated to %d", self.flipCount);
 }
 
-- (PlayingCardDeck*) playingCardDeck
+- (Deck*) deck
 {
-	if (!_playingCardDeck) {
-		_playingCardDeck = [[PlayingCardDeck alloc] init];
+	if (!_deck) {
+		_deck = [[PlayingCardDeck alloc] init];
 	}
-	return _playingCardDeck;
+	return _deck;
 }
 
 - (void) drawRandomCard
 {
-	Card* card = [self.playingCardDeck drawRandomCard];
+	Card* card = [self.deck drawRandomCard];
 	if (card) {
 		[self.cardButton setTitle:[card contents] forState:UIControlStateSelected];
 	}
