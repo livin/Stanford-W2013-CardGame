@@ -25,6 +25,8 @@
 	self = [super init];
 	
 	if (self) {
+		self.matchBonus = 4;
+		
 		for(int i = 0; i < cardCount; i++) {
 			[self.cards addObject:[deck drawRandomCard]];
 		}
@@ -56,7 +58,7 @@
 				for(Card* card in faceUpCards) {
 					card.unplayable = YES;
 				}
-				self.score += matchScore;
+				self.score += matchScore * self.matchBonus;
 			}
 		}
 		card.faceUp = !card.isFaceUp;
