@@ -26,6 +26,7 @@
 	
 	if (self) {
 		self.matchBonus = 4;
+		self.flipCost = 1;
 		
 		for(int i = 0; i < cardCount; i++) {
 			[self.cards addObject:[deck drawRandomCard]];
@@ -60,6 +61,8 @@
 				}
 				self.score += matchScore * self.matchBonus;
 			}
+			
+			self.score -= self.flipCost;
 		}
 		card.faceUp = !card.isFaceUp;
 	}

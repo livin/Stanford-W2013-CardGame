@@ -82,7 +82,7 @@
 	[game flipCardAtIndex:0];
 	[game flipCardAtIndex:1];
 	
-	STAssertEquals(4, game.score, @"After matching two suits we the score should be increased by 4");
+	STAssertEquals(2, game.score, @"Score should be 2 (4 for matching 2 suits, -2 for two flips)");
 	STAssertTrue(ace.isUnplayable, @"Once cards matched first card should be unplayable");
 	STAssertTrue(three.isUnplayable, @"Once cards matched second card should be unplayable");
 }

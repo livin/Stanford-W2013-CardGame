@@ -13,6 +13,7 @@
 @interface CardMatchingGame : NSObject
 
 @property (nonatomic) int matchBonus;
+@property (nonatomic) int flipCost;
 - (id) initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck*) deck;
 - (void) flipCardAtIndex:(NSUInteger)index;
 - (Card*) cardAtIndex:(NSUInteger)index;
