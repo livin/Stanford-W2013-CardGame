@@ -87,4 +87,24 @@
 	STAssertTrue(three.isUnplayable, @"Once cards matched second card should be unplayable");
 }
 
+- (void) testGameScoresDownWhenCardsMismatch
+{
+	Deck* deck = [[MockDeck alloc] init];
+	
+	Card* c1 = [[PlayingCard alloc] initWithContents: @"A♦"];
+	Card* c2 = [[PlayingCard alloc] initWithContents: @"3♣"];
+	
+	[deck addCard: c1 atTop: NO];
+	[deck addCard: c2 atTop: NO];
+	
+	CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: 2 usingDeck: deck];
+	
+	[game flipCardAtIndex:0];
+	[game flipCardAtIndex:1];
+	
+	STAssertEquals(game.score, -4, @"Score should be -4 (-2 for mismatch, -2 for two flips)");
+	STAssertTrue(c1.isUnplayable, @"Once cards matched first card should be unplayable");
+	STAssertTrue(c2.isUnplayable, @"Once cards matched second card should be unplayable");
+}
+
 @end

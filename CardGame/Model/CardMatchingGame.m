@@ -27,6 +27,7 @@
 	if (self) {
 		self.matchBonus = 4;
 		self.flipCost = 1;
+		self.mismatchPenalty = 2;
 		
 		for(int i = 0; i < cardCount; i++) {
 			[self.cards addObject:[deck drawRandomCard]];
@@ -53,13 +54,18 @@
 	if (!card.isUnplayable) {
 		if (!card.isFaceUp) {
 			NSArray* faceUpCards = [self faceUpCards];
-			int matchScore = [card match: faceUpCards];
-			if (matchScore) {
+			if ([faceUpCards count]) {
+				int matchScore = [card match: faceUpCards];
+				if (matchScore) {
+					self.score += matchScore * self.matchBonus;
+				} else {
+					self.score -= self.mismatchPenalty;
+				}
+				
 				card.unplayable = YES;
 				for(Card* card in faceUpCards) {
 					card.unplayable = YES;
 				}
-				self.score += matchScore * self.matchBonus;
 			}
 			
 			self.score -= self.flipCost;
