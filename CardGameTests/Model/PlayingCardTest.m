@@ -60,4 +60,14 @@
 	STAssertEquals(matchScore, 1, @"Two suits must match by score 1");
 }
 
+- (void) testMatchRanks
+{
+	PlayingCard* c1 = [[PlayingCard alloc] initWithContents: @"2♦"];
+	PlayingCard* c2 = [[PlayingCard alloc] initWithContents: @"2♥"];
+	
+	int matchScore = [c1 match: @[c2]];
+	STAssertEquals(matchScore, 4, @"Two ranks must match by score 4");
+}
+
+
 @end

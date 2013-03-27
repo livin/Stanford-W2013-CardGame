@@ -76,6 +76,8 @@
 		PlayingCard* otherCard = [cards lastObject];
 		if ([self.suit isEqualToString: otherCard.suit]) {
 			return 1;
+		} else if (self.rank == otherCard.rank) {
+			return 4;
 		}
 	}
 	
