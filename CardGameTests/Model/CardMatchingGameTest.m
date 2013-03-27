@@ -65,4 +65,26 @@
 	STAssertTrue(playableCard.isFaceUp == YES, @"Flipping first playable card should work, and card should be faced up");	
 }
 
+- (void) testGameScoresWhenTwoCardsOpened
+{
+	Deck* deck = [[MockDeck alloc] init];
+	
+	Card* ace = [[PlayingCard alloc] initWithContents: @"A♦"];
+	Card* three = [[PlayingCard alloc] initWithContents: @"3♦"];
+	
+	[deck addCard: ace atTop: NO];
+	[deck addCard: three atTop: NO];
+	
+	CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: 2 usingDeck: deck];
+	
+	STAssertEquals(0, game.score, @"Score must be 0 at the beginning");
+	
+	[game flipCardAtIndex:0];
+	[game flipCardAtIndex:1];
+	
+	STAssertEquals(1, game.score, @"After matching two suits we the score should be increased by 1");
+	STAssertTrue(ace.isUnplayable, @"Once cards matched first card should be unplayable");
+	STAssertTrue(three.isUnplayable, @"Once cards matched second card should be unplayable");
+}
+
 @end

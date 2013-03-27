@@ -51,4 +51,13 @@
     STAssertEquals((NSUInteger)13, [PlayingCard maxRank], @"Max rank of the playing card should be 13");
 }
 
+- (void) testMatchSuits
+{
+	PlayingCard* c1 = [[PlayingCard alloc] initWithContents: @"2♦"];
+	PlayingCard* c2 = [[PlayingCard alloc] initWithContents: @"A♦"];
+	
+	int matchScore = [c1 match: @[c2]];
+	STAssertEquals(matchScore, 1, @"Two suits must match by score 1");
+}
+
 @end

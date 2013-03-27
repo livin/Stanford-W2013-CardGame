@@ -70,4 +70,16 @@
     return [rankString stringByAppendingString: self.suit];
 }
 
+- (int) match: (NSArray*) cards
+{
+	if ([cards count] == 1) {
+		PlayingCard* otherCard = [cards lastObject];
+		if ([self.suit isEqualToString: otherCard.suit]) {
+			return 1;
+		}
+	}
+	
+	return 0;
+}
+
 @end

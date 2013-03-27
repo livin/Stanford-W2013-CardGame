@@ -10,6 +10,7 @@
 
 @interface CardMatchingGame()
 @property (strong, nonatomic) NSMutableArray* cards;
+@property (readwrite, nonatomic) int score;
 @end
 
 @implementation CardMatchingGame
@@ -47,8 +48,30 @@
 {
 	Card* card = [self cardAtIndex: index];
 	if (!card.isUnplayable) {
+		if (!card.isFaceUp) {
+			NSArray* faceUpCards = [self faceUpCards];
+			int matchScore = [card match: faceUpCards];
+			if (matchScore) {
+				card.unplayable = YES;
+				for(Card* card in faceUpCards) {
+					card.unplayable = YES;
+				}
+				self.score += matchScore;
+			}
+		}
 		card.faceUp = !card.isFaceUp;
 	}
+}
+
+- (NSArray*) faceUpCards
+{
+	NSMutableArray* facedUpCards = [[NSMutableArray alloc] init];
+	for(Card* card in self.cards) {
+		if (card.isFaceUp) {
+			[facedUpCards addObject: card];
+		}
+	}
+	return facedUpCards;
 }
 
 

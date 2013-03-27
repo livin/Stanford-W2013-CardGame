@@ -15,4 +15,9 @@
 	return nil; // should be defined in subclasses.
 }
 
+- (int) match: (NSArray*) cards
+{
+	return 0;
+}
+
 @end

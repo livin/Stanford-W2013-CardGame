@@ -10,9 +10,9 @@
 
 @interface Card : NSObject
 
-- (NSString*) contents;
-
 @property (nonatomic, getter=isFaceUp) BOOL faceUp;
 @property (nonatomic, getter=isUnplayable) BOOL unplayable;
+- (NSString*) contents;
+- (int) match: (NSArray*) cards;
 
 @end
