@@ -67,44 +67,36 @@
 
 - (void) testGameScoresWhenTwoCardsOpened
 {
-	Deck* deck = [[MockDeck alloc] init];
-	
 	Card* ace = [[PlayingCard alloc] initWithContents: @"A♦"];
 	Card* three = [[PlayingCard alloc] initWithContents: @"3♦"];
-	
-	[deck addCard: ace atTop: NO];
-	[deck addCard: three atTop: NO];
-	
-	CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: 2 usingDeck: deck];
-	
-	STAssertEquals(0, game.score, @"Score must be 0 at the beginning");
-	
-	[game flipCardAtIndex:0];
-	[game flipCardAtIndex:1];
-	
-	STAssertEquals(2, game.score, @"Score should be 2 (4 for matching 2 suits, -2 for two flips)");
-	STAssertTrue(ace.isUnplayable, @"Once cards matched first card should be unplayable");
-	STAssertTrue(three.isUnplayable, @"Once cards matched second card should be unplayable");
+	[self assertFlipCardsGame:@[ace, three] scores: 2 because: @"Score should be 2 (4 for matching 2 suits, -2 for two flips)"];
 }
 
 - (void) testGameScoresDownWhenCardsMismatch
 {
-	Deck* deck = [[MockDeck alloc] init];
-	
 	Card* c1 = [[PlayingCard alloc] initWithContents: @"A♦"];
 	Card* c2 = [[PlayingCard alloc] initWithContents: @"3♣"];
+	[self assertFlipCardsGame:@[c1, c2] scores: -4 because: @"Score should be -4 (-2 for mismatch, -2 for two flips)"];
+}
+
+- (void) assertFlipCardsGame: (NSArray*) cards scores: (int) score because: (NSString*) description
+{
+	Deck* deck = [[MockDeck alloc] init];
 	
-	[deck addCard: c1 atTop: NO];
-	[deck addCard: c2 atTop: NO];
+	for(Card* card in cards) {
+		[deck addCard: card atTop: NO];
+	}
 	
-	CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: 2 usingDeck: deck];
+	CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: [cards count] usingDeck: deck];
+
+	for(int i = 0; i < [cards count]; i++) {
+		[game flipCardAtIndex: i];
+	}
 	
-	[game flipCardAtIndex:0];
-	[game flipCardAtIndex:1];
-	
-	STAssertEquals(game.score, -4, @"Score should be -4 (-2 for mismatch, -2 for two flips)");
-	STAssertTrue(c1.isUnplayable, @"Once cards matched first card should be unplayable");
-	STAssertTrue(c2.isUnplayable, @"Once cards matched second card should be unplayable");
+	STAssertEquals(game.score, score, description);
+	for(Card* card in cards) {
+		STAssertTrue(card.isUnplayable, [NSString stringWithFormat: @"Card %@ card should be unplayable", [card contents]]);
+	}	
 }
 
 @end
