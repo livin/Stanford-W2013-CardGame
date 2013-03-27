@@ -8,13 +8,15 @@
 
 #import "CardGameViewController.h"
 #import "PlayingCardDeck.h"
+#import "CardMatchingGame.h"
 
 @interface CardGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
-@property (weak, nonatomic) IBOutlet UIButton *cardButton;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) int flipCount;
-@property (strong, nonatomic) Deck* deck;
+@property (strong, nonatomic) CardMatchingGame* game;
 
 @end
 
@@ -28,26 +30,42 @@
 	NSLog(@"flips updated to %d", self.flipCount);
 }
 
-- (Deck*) deck
+- (void) setCardButtons:(NSArray *)cardButtons
 {
-	if (!_deck) {
-		_deck = [[PlayingCardDeck alloc] init];
-	}
-	return _deck;
+	_cardButtons = cardButtons;
+	[self updateUI];
 }
 
-- (void) drawRandomCard
+- (void) updateUI
 {
-	Card* card = [self.deck drawRandomCard];
-	if (card) {
-		[self.cardButton setTitle:[card contents] forState:UIControlStateSelected];
+	for(UIButton* cardButton in self.cardButtons) {
+		NSUInteger index = [self.cardButtons indexOfObject: cardButton];
+		Card* card = [self.game cardAtIndex: index];
+		
+		[cardButton setTitle: [card contents] forState: UIControlStateSelected];
+		[cardButton setTitle: [card contents] forState: UIControlStateSelected|UIControlStateDisabled];
+		cardButton.selected = card.faceUp;
+		cardButton.enabled = !card.isUnplayable;		
+		cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
 	}
+	
+	self.scoreLabel.text = [NSString stringWithFormat: @"Score: %d", self.game.score];
+}
+
+- (CardMatchingGame*) game
+{
+	if (!_game) {
+		Deck* deck = [[PlayingCardDeck alloc] init];
+		_game = [[CardMatchingGame alloc] initWithCardCount: [self.cardButtons count] usingDeck: deck];
+	}
+	return _game;
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
-	[self drawRandomCard];
-	sender.selected = !sender.isSelected;
-	self.flipCount++;
+	NSUInteger index = [self.cardButtons indexOfObject: sender];
+	[self.game flipCardAtIndex: index];
+	self.flipCount++;	
+	[self updateUI];
 }
 
 @end
