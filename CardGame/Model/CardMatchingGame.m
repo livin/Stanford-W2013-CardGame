@@ -78,7 +78,7 @@
 {
 	NSMutableArray* facedUpCards = [[NSMutableArray alloc] init];
 	for(Card* card in self.cards) {
-		if (card.isFaceUp) {
+		if (card.isFaceUp && (!card.isUnplayable)) {
 			[facedUpCards addObject: card];
 		}
 	}
