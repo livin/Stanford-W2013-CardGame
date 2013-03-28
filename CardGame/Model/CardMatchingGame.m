@@ -30,6 +30,8 @@
 		self.flipCost = 1;
 		self.mismatchPenalty = 2;
 		
+		self.lastFlipResult = @"";
+		
 		for(int i = 0; i < cardCount; i++) {
 			[self.cards addObject:[deck drawRandomCard]];
 		}
