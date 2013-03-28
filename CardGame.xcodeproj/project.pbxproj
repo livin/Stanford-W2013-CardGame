@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70509301704EB1700CC4A83 /* cardback.png in Resources */ = {isa = PBXBuildFile; fileRef = E705092F1704EB1700CC4A83 /* cardback.png */; };
 		E71FD6A91700E2C400D55D24 /* CardMatchingGameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E71FD6A81700E2C400D55D24 /* CardMatchingGameTest.m */; };
 		E71FD6AC1700E5C500D55D24 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = E71FD6AB1700E5C500D55D24 /* CardMatchingGame.m */; };
 		E71FD6AD1700E5C500D55D24 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = E71FD6AB1700E5C500D55D24 /* CardMatchingGame.m */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E705092F1704EB1700CC4A83 /* cardback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardback.png; sourceTree = "<group>"; };
 		E71FD6A71700E2C400D55D24 /* CardMatchingGameTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGameTest.h; path = Model/CardMatchingGameTest.h; sourceTree = "<group>"; };
 		E71FD6A81700E2C400D55D24 /* CardMatchingGameTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGameTest.m; path = Model/CardMatchingGameTest.m; sourceTree = "<group>"; };
 		E71FD6AA1700E5C500D55D24 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		E7D4D4C416FA4F1F00408B8A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E705092F1704EB1700CC4A83 /* cardback.png */,
 				E7D4D4C516FA4F1F00408B8A /* CardGame-Info.plist */,
 				E7D4D4C616FA4F1F00408B8A /* InfoPlist.strings */,
 				E7D4D4C916FA4F1F00408B8A /* main.m */,
@@ -304,6 +307,7 @@
 				E7D4D4D216FA4F1F00408B8A /* Default@2x.png in Resources */,
 				E7D4D4D416FA4F1F00408B8A /* Default-568h@2x.png in Resources */,
 				E7D4D4D716FA4F1F00408B8A /* MainStoryboard.storyboard in Resources */,
+				E70509301704EB1700CC4A83 /* cardback.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

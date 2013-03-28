@@ -37,6 +37,11 @@
 	[self updateUI];
 }
 
++ (UIImage*) cardBackImage
+{
+	return [UIImage imageNamed:@"cardback.png"];
+}
+
 - (void) updateUI
 {
 	for(UIButton* cardButton in self.cardButtons) {
@@ -45,8 +50,11 @@
 		
 		[cardButton setTitle: [card contents] forState: UIControlStateSelected];
 		[cardButton setTitle: [card contents] forState: UIControlStateSelected|UIControlStateDisabled];
+		[cardButton setImage: card.isFaceUp?nil:[CardGameViewController cardBackImage]
+					forState: UIControlStateNormal];
+		cardButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
 		cardButton.selected = card.faceUp;
-		cardButton.enabled = !card.isUnplayable;		
+		cardButton.enabled = !card.isUnplayable;
 		cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
 	}
 	
