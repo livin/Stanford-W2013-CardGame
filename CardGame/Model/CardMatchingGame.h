@@ -19,5 +19,6 @@
 - (void) flipCardAtIndex:(NSUInteger)index;
 - (Card*) cardAtIndex:(NSUInteger)index;
 @property (readonly, nonatomic) int score;
+@property (readonly, strong, nonatomic) NSString* lastFlipResult;
 
 @end

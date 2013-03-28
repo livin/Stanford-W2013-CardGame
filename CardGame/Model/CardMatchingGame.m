@@ -11,6 +11,7 @@
 @interface CardMatchingGame()
 @property (strong, nonatomic) NSMutableArray* cards;
 @property (readwrite, nonatomic) int score;
+@property (readwrite, strong, nonatomic) NSString* lastFlipResult;
 @end
 
 @implementation CardMatchingGame
@@ -57,21 +58,49 @@
 			if ([faceUpCards count]) {
 				int matchScore = [card match: faceUpCards];
 				if (matchScore) {
+					int matchScoreWithBonus = matchScore * self.matchBonus;
 					self.score += matchScore * self.matchBonus;
+					self.lastFlipResult = [self cardsMatchMessage:card cards: faceUpCards withPoints: matchScoreWithBonus];
 				} else {
 					self.score -= self.mismatchPenalty;
+					self.lastFlipResult = [self cardsMismatchMessage:card cards: faceUpCards withPoints: self.mismatchPenalty];
 				}
 				
 				card.unplayable = YES;
 				for(Card* card in faceUpCards) {
 					card.unplayable = YES;
 				}
+			} else {
+				self.lastFlipResult = [@"Flipped up " stringByAppendingString: [card contents]];
 			}
 			
 			self.score -= self.flipCost;
 		}
 		card.faceUp = !card.isFaceUp;
 	}
+}
+
+- (NSString*) cardsMatchMessage:(Card*) first cards: (NSArray*) cards withPoints: (int) points
+{	
+	return [NSString stringWithFormat:@"Matched %@ for %d points", [self cardNamesWith:first andCards: cards], points];
+}
+
+- (NSString*) cardsMismatchMessage:(Card*) first cards: (NSArray*) cards withPoints: (int) points
+{	
+	return [NSString stringWithFormat:@"%@ don't match! %d points penalty!", [self cardNamesWith:first andCards: cards], points];
+}
+
+
+- (NSString*) cardNamesWith:(Card*) first andCards: (NSArray*) cards
+{
+	NSMutableArray* cardNames = [[NSMutableArray alloc] init];
+	[cardNames addObject: [first contents]];
+	for(Card* card in cards) {
+		[cardNames addObject: [card contents]];
+	}
+	
+	NSString* cardsString = [cardNames componentsJoinedByString: @" & "];
+	return cardsString;
 }
 
 - (NSArray*) faceUpCards

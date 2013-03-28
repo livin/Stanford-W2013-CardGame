@@ -79,6 +79,37 @@
 	[self assertFlipCardsGame:@[c1, c2] scores: -4 because: @"Score should be -4 (-2 for mismatch, -2 for two flips)"];
 }
 
+- (void) testLastFlipResult
+{
+	Deck* deck = [[MockDeck alloc] init];
+
+	Card* c1 = [[PlayingCard alloc] initWithContents: @"A♦"];
+	Card* c2 = [[PlayingCard alloc] initWithContents: @"3♦"];
+	Card* c3 = [[PlayingCard alloc] initWithContents: @"2♣"];
+	Card* c4 = [[PlayingCard alloc] initWithContents: @"3♦"];
+	
+	NSArray* cards = @[c1, c2, c3, c4];
+	
+	for(Card* card in cards) {
+		[deck addCard: card atTop: NO];
+	}
+	
+	CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: [cards count] usingDeck: deck];
+	
+	[game flipCardAtIndex: 0];
+	STAssertEqualObjects([game lastFlipResult], @"Flipped up A♦", @"A♦ should be last flip result");
+	
+	[game flipCardAtIndex: 1];
+	STAssertEqualObjects([game lastFlipResult], @"Matched 3♦ & A♦ for 4 points", @"We should get flip match message when cards match");
+
+	[game flipCardAtIndex: 2];
+	STAssertEqualObjects([game lastFlipResult], @"Flipped up 2♣", @"Flipping third card should give another flipped up message");
+	
+	[game flipCardAtIndex: 3];
+	STAssertEqualObjects([game lastFlipResult], @"3♦ & 2♣ don't match! 2 points penalty!", @"When cards don't match we should get don't match message");
+	
+}
+
 - (void) assertFlipCardsGame: (NSArray*) cards scores: (int) score because: (NSString*) description
 {
 	Deck* deck = [[MockDeck alloc] init];
