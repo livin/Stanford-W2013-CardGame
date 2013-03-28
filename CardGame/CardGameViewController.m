@@ -70,4 +70,10 @@
 	[self updateUI];
 }
 
+- (IBAction)deal:(UIButton *)sender {
+	self.game = nil;
+	[self updateUI];
+}
+
+
 @end
