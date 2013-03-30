@@ -12,7 +12,6 @@
 @property (strong, nonatomic) NSMutableArray* cards;
 @property (readwrite, nonatomic) int score;
 @property (readwrite, strong, nonatomic) NSString* lastFlipResult;
-@property (nonatomic) NSUInteger maxCardsToOpen;
 @end
 
 @implementation CardMatchingGame

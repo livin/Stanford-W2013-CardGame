@@ -16,9 +16,10 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *cardsToOpenControl;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) CardMatchingGame* game;
-
+@property (nonatomic) BOOL firstFlipMade;
 @end
 
 @implementation CardGameViewController
@@ -60,6 +61,7 @@
 	
 	self.scoreLabel.text = [NSString stringWithFormat: @"Score: %d", self.game.score];
 	self.lastFlipResultLabel.text = [self.game lastFlipResult];
+	self.cardsToOpenControl.enabled = !self.firstFlipMade;
 }
 
 - (CardMatchingGame*) game
@@ -67,11 +69,13 @@
 	if (!_game) {
 		Deck* deck = [[PlayingCardDeck alloc] init];
 		_game = [[CardMatchingGame alloc] initWithCardCount: [self.cardButtons count] usingDeck: deck];
+		self.firstFlipMade = NO;
 	}
 	return _game;
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
+	self.firstFlipMade = YES;
 	NSUInteger index = [self.cardButtons indexOfObject: sender];
 	[self.game flipCardAtIndex: index];
 	self.flipCount++;	
@@ -83,5 +87,9 @@
 	[self updateUI];
 }
 
+- (IBAction)changedCardsToOpen:(UISegmentedControl *)sender {
+	int cardsToOpen = self.cardsToOpenControl.selectedSegmentIndex == 0 ? 2 : 3;
+	self.game.maxCardsToOpen = cardsToOpen;
+}
 
 @end
