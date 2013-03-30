@@ -79,6 +79,21 @@
 	[self assertFlipCardsGame:@[c1, c2] scores: -4 because: @"Score should be -4 (-2 for mismatch, -2 for two flips)"];
 }
 
+- (void) testGame3Cards
+{
+	Card* c1 = [[PlayingCard alloc] initWithContents: @"A♦"];
+	Card* c2 = [[PlayingCard alloc] initWithContents: @"3♦"];
+	Card* c3 = [[PlayingCard alloc] initWithContents: @"2♦"];
+	[self assertFlipCardsGame:@[c1, c2, c3] maxCardsToOpen: 3 scores: 21 because: @"Score should be 24 (24 for match 3 suits, -3 for two flips)"];
+
+	/*
+	c1 = [[PlayingCard alloc] initWithContents: @"A♦"];
+	c2 = [[PlayingCard alloc] initWithContents: @"3♦"];
+	c3 = [[PlayingCard alloc] initWithContents: @"7♣"];
+	[self assertFlipCardsGame:@[c1, c2, c3] maxCardsToOpen: 3 scores: -2 because: @"Score should be -2 (1 for match 2 suits, -3 for two flips)"];
+	 */
+}
+
 - (void) testLastFlipResult
 {
 	Deck* deck = [[MockDeck alloc] init];
@@ -112,13 +127,18 @@
 
 - (void) assertFlipCardsGame: (NSArray*) cards scores: (int) score because: (NSString*) description
 {
+	[self assertFlipCardsGame:cards maxCardsToOpen: 2 scores: score because: description];
+}
+
+- (void) assertFlipCardsGame: (NSArray*) cards maxCardsToOpen: (int) maxCards scores: (int) score because: (NSString*) description
+{
 	Deck* deck = [[MockDeck alloc] init];
 	
 	for(Card* card in cards) {
 		[deck addCard: card atTop: NO];
 	}
 	
-	CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: [cards count] usingDeck: deck];
+	CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: [cards count] maxCardsToOpen: maxCards usingDeck: deck];
 
 	for(int i = 0; i < [cards count]; i++) {
 		[game flipCardAtIndex: i];

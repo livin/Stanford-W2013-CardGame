@@ -87,7 +87,7 @@
 	int suitsScore = 5*suitsMatch-4; // Gives 1 for 1 suitsMatch, 6 for 2 suitsMatch
 	int ranksScore = 6*ranksMatch-2; // Gives 4 for 1 ranksMatch, 10 for 2 ranksMatch
 	
-	return max(0, max(suitsScore, ranksScore));
+	return MAX(0, MAX(suitsScore, ranksScore));
 }
 
 @end

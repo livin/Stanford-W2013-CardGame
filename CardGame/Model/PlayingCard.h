@@ -10,8 +10,6 @@
 
 @interface PlayingCard : Card
 
-#define max(a, b) (a>b?a:b)
-
 + (NSUInteger) maxRank;
 + (NSArray*)validSuits;
 

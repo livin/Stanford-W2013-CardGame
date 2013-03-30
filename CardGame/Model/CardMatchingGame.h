@@ -15,6 +15,7 @@
 @property (nonatomic) int matchBonus;
 @property (nonatomic) int flipCost;
 @property (nonatomic) int mismatchPenalty;
+- (id) initWithCardCount:(NSUInteger)cardCount maxCardsToOpen: (NSUInteger)maxCardsToOpen usingDeck:(Deck*) deck;
 - (id) initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck*) deck;
 - (void) flipCardAtIndex:(NSUInteger)index;
 - (Card*) cardAtIndex:(NSUInteger)index;

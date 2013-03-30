@@ -12,6 +12,7 @@
 @property (strong, nonatomic) NSMutableArray* cards;
 @property (readwrite, nonatomic) int score;
 @property (readwrite, strong, nonatomic) NSString* lastFlipResult;
+@property (nonatomic) NSUInteger maxCardsToOpen;
 @end
 
 @implementation CardMatchingGame
@@ -21,7 +22,7 @@
 	return nil;
 }
 
-- (id) initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck*) deck
+- (id) initWithCardCount:(NSUInteger)cardCount maxCardsToOpen: (NSUInteger)maxCardsToOpen usingDeck:(Deck*) deck
 {
 	self = [super init];
 	
@@ -29,6 +30,8 @@
 		self.matchBonus = 4;
 		self.flipCost = 1;
 		self.mismatchPenalty = 2;
+		
+		self.maxCardsToOpen = maxCardsToOpen;				
 		
 		self.lastFlipResult = @"";
 		
@@ -38,6 +41,11 @@
 	}
 	
 	return self;
+}
+
+- (id) initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck*) deck
+{
+	return [self initWithCardCount: cardCount maxCardsToOpen: 2 usingDeck: deck];
 }
 
 - (NSMutableArray*) cards {
@@ -57,7 +65,7 @@
 	if (!card.isUnplayable) {
 		if (!card.isFaceUp) {
 			NSArray* faceUpCards = [self faceUpCards];
-			if ([faceUpCards count]) {
+			if ([faceUpCards count] + 1 == self.maxCardsToOpen) {
 				int matchScore = [card match: faceUpCards];
 				if (matchScore) {
 					int matchScoreWithBonus = matchScore * self.matchBonus;

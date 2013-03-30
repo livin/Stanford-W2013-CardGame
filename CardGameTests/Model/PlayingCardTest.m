@@ -51,13 +51,6 @@
     STAssertEquals((NSUInteger)13, [PlayingCard maxRank], @"Max rank of the playing card should be 13");
 }
 
-- (void) testMax
-{
-	STAssertEquals(max(1,2), 2, @"2 should be max of 1 and 2");
-	STAssertEquals(max(0, max(1, 2)), 2, @"max of 0 and max of 1 and 2 should be 2");
-
-}
-
 - (void) testMatchSuits
 {
 	PlayingCard* c1 = [[PlayingCard alloc] initWithContents: @"2♦"];
