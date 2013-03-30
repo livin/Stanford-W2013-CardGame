@@ -76,10 +76,21 @@
 	int suitsMatch = 0;
 	int ranksMatch = 0;
 	
-	for(PlayingCard* anotherCard in cards) {
-		if ([self.suit isEqualToString: anotherCard.suit]) {
+	
+	NSArray* combinations = @[];
+	if ([cards count] == 1) {
+		combinations = @[ @[self, cards[0]] ];
+	} else if ([cards count] == 2) {
+		combinations = @[ @[self, cards[0]], @[cards[0], cards[1]]];
+	}
+	
+	for(NSArray* twoCards in combinations) {
+		PlayingCard* first = twoCards[0];
+		PlayingCard* second = twoCards[1];
+		
+		if ([first.suit isEqualToString: second.suit]) {
 			suitsMatch++;
-		} else if (self.rank == anotherCard.rank) {
+		} else if (first.rank == second.rank) {
 			ranksMatch++;
 		}
 	}

@@ -78,6 +78,9 @@
 	int matchScore = [c1 match: @[c2, c3]];
 	STAssertEquals(matchScore, 1, @"Two suits in 3 cards must match by score 1");
 	
+	matchScore = [c3 match: @[c1, c2]];
+	STAssertEquals(matchScore, 1, @"There should be match, even if original card doesn't matching anything");	
+	
 	c3 = [[PlayingCard alloc] initWithContents: @"J♦"];
 	
 	matchScore = [c1 match: @[c2, c3]];

@@ -84,14 +84,12 @@
 	Card* c1 = [[PlayingCard alloc] initWithContents: @"A♦"];
 	Card* c2 = [[PlayingCard alloc] initWithContents: @"3♦"];
 	Card* c3 = [[PlayingCard alloc] initWithContents: @"2♦"];
-	[self assertFlipCardsGame:@[c1, c2, c3] maxCardsToOpen: 3 scores: 21 because: @"Score should be 24 (24 for match 3 suits, -3 for two flips)"];
+	[self assertFlipCardsGame:@[c1, c2, c3] maxCardsToOpen: 3 scores: 21 because: @"Score should be 21 (24 for match 3 suits, -3 for two flips)"];
 
-	/*
 	c1 = [[PlayingCard alloc] initWithContents: @"A♦"];
 	c2 = [[PlayingCard alloc] initWithContents: @"3♦"];
 	c3 = [[PlayingCard alloc] initWithContents: @"7♣"];
-	[self assertFlipCardsGame:@[c1, c2, c3] maxCardsToOpen: 3 scores: -2 because: @"Score should be -2 (1 for match 2 suits, -3 for two flips)"];
-	 */
+	[self assertFlipCardsGame:@[c1, c2, c3] maxCardsToOpen: 3 scores: 1 because: @"Score should be -2 (4 for match 2 suits, -3 for two flips)"];
 }
 
 - (void) testLastFlipResult
