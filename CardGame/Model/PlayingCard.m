@@ -70,18 +70,24 @@
     return [rankString stringByAppendingString: self.suit];
 }
 
+
 - (int) match: (NSArray*) cards
 {
-	if ([cards count] == 1) {
-		PlayingCard* otherCard = [cards lastObject];
-		if ([self.suit isEqualToString: otherCard.suit]) {
-			return 1;
-		} else if (self.rank == otherCard.rank) {
-			return 4;
+	int suitsMatch = 0;
+	int ranksMatch = 0;
+	
+	for(PlayingCard* anotherCard in cards) {
+		if ([self.suit isEqualToString: anotherCard.suit]) {
+			suitsMatch++;
+		} else if (self.rank == anotherCard.rank) {
+			ranksMatch++;
 		}
 	}
 	
-	return 0;
+	int suitsScore = 5*suitsMatch-4; // Gives 1 for 1 suitsMatch, 6 for 2 suitsMatch
+	int ranksScore = 6*ranksMatch-2; // Gives 4 for 1 ranksMatch, 10 for 2 ranksMatch
+	
+	return max(0, max(suitsScore, ranksScore));
 }
 
 @end

@@ -51,6 +51,13 @@
     STAssertEquals((NSUInteger)13, [PlayingCard maxRank], @"Max rank of the playing card should be 13");
 }
 
+- (void) testMax
+{
+	STAssertEquals(max(1,2), 2, @"2 should be max of 1 and 2");
+	STAssertEquals(max(0, max(1, 2)), 2, @"max of 0 and max of 1 and 2 should be 2");
+
+}
+
 - (void) testMatchSuits
 {
 	PlayingCard* c1 = [[PlayingCard alloc] initWithContents: @"2♦"];
@@ -67,6 +74,35 @@
 	
 	int matchScore = [c1 match: @[c2]];
 	STAssertEquals(matchScore, 4, @"Two ranks must match by score 4");
+}
+
+- (void) testMatchSuitsIn3Cards
+{
+	PlayingCard* c1 = [[PlayingCard alloc] initWithContents: @"2♦"];
+	PlayingCard* c2 = [[PlayingCard alloc] initWithContents: @"A♦"];
+	PlayingCard* c3 = [[PlayingCard alloc] initWithContents: @"J♥"];
+	
+	int matchScore = [c1 match: @[c2, c3]];
+	STAssertEquals(matchScore, 1, @"Two suits in 3 cards must match by score 1");
+	
+	c3 = [[PlayingCard alloc] initWithContents: @"J♦"];
+	
+	matchScore = [c1 match: @[c2, c3]];
+	STAssertEquals(matchScore, 6, @"Three suits in 3 cards must match by score 6");
+}
+
+- (void) testMatchRanksIn3Cards
+{
+	PlayingCard* c1 = [[PlayingCard alloc] initWithContents: @"2♦"];
+	PlayingCard* c2 = [[PlayingCard alloc] initWithContents: @"2♥"];
+	PlayingCard* c3 = [[PlayingCard alloc] initWithContents: @"J♥"];
+	
+	int matchScore = [c1 match: @[c2, c3]];
+	STAssertEquals(matchScore, 4, @"Two ranks in 3 cards must match by score 4");
+	
+	c3 = [[PlayingCard alloc] initWithContents: @"2♣"];
+	matchScore = [c1 match: @[c2, c3]];
+	STAssertEquals(matchScore, 10, @"Three ranks in 3 cards must match by score 10");
 }
 
 
