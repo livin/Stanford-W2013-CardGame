@@ -84,6 +84,7 @@
 
 - (IBAction)deal:(UIButton *)sender {
 	self.game = nil;
+	self.flipCount = 0;
 	[self updateUI];
 }
 
