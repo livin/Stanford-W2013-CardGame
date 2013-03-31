@@ -61,7 +61,10 @@
 	}
 	
 	self.scoreLabel.text = [NSString stringWithFormat: @"Score: %d", self.game.score];
+	
 	self.lastFlipResultLabel.text = [self.game lastFlipResult];
+	self.lastFlipResultLabel.alpha = 1;
+	
 	self.cardsToOpenControl.enabled = !self.firstFlipMade;
 	
 	
@@ -102,8 +105,12 @@
 - (IBAction)historySlide:(UISlider *)sender {
 	int index = self.historySlider.value;
 
-	if ([self.game.flipHistory count])
+	if ([self.game.flipHistory count]) {
+		BOOL pastFlips = index < ([self.game.flipHistory count] - 1);
+		
 		self.lastFlipResultLabel.text = self.game.flipHistory[index];
+		self.lastFlipResultLabel.alpha = pastFlips? 0.55 : 1;
+	}
 }
 
 @end
