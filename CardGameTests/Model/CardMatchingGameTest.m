@@ -92,7 +92,7 @@
 	[self assertFlipCardsGame:@[c1, c2, c3] maxCardsToOpen: 3 scores: 1 because: @"Score should be -2 (4 for match 2 suits, -3 for two flips)"];
 }
 
-- (void) testLastFlipResult
+- (void) testLastFlipResultAndFlipHistory
 {
 	Deck* deck = [[MockDeck alloc] init];
 
@@ -120,7 +120,9 @@
 	
 	[game flipCardAtIndex: 3];
 	STAssertEqualObjects([game lastFlipResult], @"3♦ & 2♣ don't match! 2 points penalty!", @"When cards don't match we should get don't match message");
-	
+		
+	STAssertEquals([game.flipHistory count], (NSUInteger)4, @"Game now should have flip history of 4 items");
+	STAssertEqualObjects(game.flipHistory[2], @"Flipped up 2♣", @"The third item of flip (index=2) should be 'Flipped up 2♣'");
 }
 
 - (void) assertFlipCardsGame: (NSArray*) cards scores: (int) score because: (NSString*) description

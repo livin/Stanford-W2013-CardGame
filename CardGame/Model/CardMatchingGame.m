@@ -12,9 +12,12 @@
 @property (strong, nonatomic) NSMutableArray* cards;
 @property (readwrite, nonatomic) int score;
 @property (readwrite, strong, nonatomic) NSString* lastFlipResult;
+@property (readwrite, strong, nonatomic) NSMutableArray* flipHistory;
 @end
 
 @implementation CardMatchingGame
+
+@synthesize lastFlipResult = _lastFlipResult;
 
 - (id) init
 {
@@ -31,8 +34,6 @@
 		self.mismatchPenalty = 2;
 		
 		self.maxCardsToOpen = maxCardsToOpen;				
-		
-		self.lastFlipResult = @"";
 		
 		for(int i = 0; i < cardCount; i++) {
 			[self.cards addObject:[deck drawRandomCard]];
@@ -51,6 +52,24 @@
 	if (!_cards)
 		_cards = [[NSMutableArray alloc] init];
 	return _cards;
+}
+
+- (NSString*) lastFlipResult
+{
+	return _lastFlipResult?_lastFlipResult:@"";
+}
+
+- (void) setLastFlipResult:(NSString *)lastFlipResult
+{
+	_lastFlipResult = lastFlipResult;
+	[self.flipHistory addObject: lastFlipResult];
+}
+
+- (NSMutableArray*) flipHistory
+{
+	if (!_flipHistory)
+		_flipHistory = [[NSMutableArray alloc] init];	
+	return _flipHistory;
 }
 
 - (Card*) cardAtIndex:(NSUInteger)index
