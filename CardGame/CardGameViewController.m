@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlipResultLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *cardsToOpenControl;
+@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) CardMatchingGame* game;
 @property (nonatomic) BOOL firstFlipMade;
@@ -62,6 +63,11 @@
 	self.scoreLabel.text = [NSString stringWithFormat: @"Score: %d", self.game.score];
 	self.lastFlipResultLabel.text = [self.game lastFlipResult];
 	self.cardsToOpenControl.enabled = !self.firstFlipMade;
+	
+	
+	int flipsInHistory = [self.game.flipHistory count];
+	[self.historySlider setMaximumValue: flipsInHistory?(flipsInHistory-1):0];
+	[self.historySlider setValue: self.historySlider.maximumValue];
 }
 
 - (CardMatchingGame*) game
@@ -91,6 +97,13 @@
 - (IBAction)changedCardsToOpen:(UISegmentedControl *)sender {
 	int cardsToOpen = self.cardsToOpenControl.selectedSegmentIndex == 0 ? 2 : 3;
 	self.game.maxCardsToOpen = cardsToOpen;
+}
+
+- (IBAction)historySlide:(UISlider *)sender {
+	int index = self.historySlider.value;
+
+	if ([self.game.flipHistory count])
+		self.lastFlipResultLabel.text = self.game.flipHistory[index];
 }
 
 @end
