@@ -36,6 +36,7 @@ static NSDateFormatter* dateFormatter;
 {
     _score = score;
     self.endTime = [NSDate date];
+    [self synchronize];
 }
 
 - (NSTimeInterval) duration
@@ -47,6 +48,24 @@ static NSDateFormatter* dateFormatter;
 {
     NSString* startTimeString = [[[self class] dateFormatter] stringFromDate: self.startTime];
     return [NSString stringWithFormat: @"Score: %d (%@ %.0fs)", self.score, startTimeString, [self duration]];
+}
+
+- (void) synchronize
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary* allResults = [[defaults dictionaryForKey: ALL_RESULTS_KEY] mutableCopy];
+    
+    if (!allResults)
+        allResults = [[NSMutableDictionary alloc] init];
+    
+    allResults[[self.startTime description]] = [self asPropertyList];
+    [defaults setObject: allResults forKey: ALL_RESULTS_KEY];
+    [defaults synchronize];
+}
+
+- (NSDictionary*) asPropertyList
+{
+    return @{START_KEY: self.startTime, END_KEY: self.endTime, SCORE_KEY: @(self.score)};
 }
 
 @end
