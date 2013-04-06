@@ -39,4 +39,28 @@
     NSLog(@"Duration: %f", duration);
 }
 
+- (void) testDateFormatter
+{
+    NSDateFormatter* dateFormatter = [GameResult dateFormatter];
+    NSDate* date = [dateFormatter dateFromString: @"4/6/13 2:30PM"];
+    NSDateComponents* cc = [[NSCalendar currentCalendar] components: NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit fromDate:date];
+    STAssertEquals(cc.year, 2013, @"Year");
+    STAssertEquals(cc.month, 4, @"Month");
+    STAssertEquals(cc.day, 6, @"Day");
+    STAssertEquals(cc.hour, 14, @"Hour");
+    STAssertEquals(cc.minute, 30, @"Minute");    
+}
+
+- (void) testDescription
+{
+    GameResult* gr = [[GameResult alloc] init];
+    gr.score = 15;
+    
+    // we set dates manually for this test
+    gr.startTime = [[GameResult dateFormatter] dateFromString: @"4/6/13 1:00PM"];
+    gr.endTime = [[GameResult dateFormatter] dateFromString: @"4/6/13 1:05PM"];
+     
+    STAssertEqualObjects([gr description], @"Score: 15 (4/6/13 1:00PM 300s)", @"Game description should be 15 scores started on 4 April 2013 and took 600 secs (5 mins)");
+}
+
 @end

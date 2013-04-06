@@ -8,12 +8,18 @@
 
 #import "GameResult.h"
 
-@interface GameResult()
-@property (readwrite, strong, nonatomic) NSDate* startTime;
-@property (readwrite, strong, nonatomic) NSDate* endTime;
-@end
+static NSDateFormatter* dateFormatter;
 
 @implementation GameResult
+
++ (NSDateFormatter*) dateFormatter
+{
+    if (!dateFormatter) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"M/d/yy h:mma"];
+    }
+    return dateFormatter;
+}
 
 - (id) init
 {
@@ -35,6 +41,12 @@
 - (NSTimeInterval) duration
 {
     return [self.endTime timeIntervalSinceDate: self.startTime];
+}
+
+- (NSString*) description
+{
+    NSString* startTimeString = [[[self class] dateFormatter] stringFromDate: self.startTime];
+    return [NSString stringWithFormat: @"Score: %d (%@ %.0fs)", self.score, startTimeString, [self duration]];
 }
 
 @end

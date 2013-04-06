@@ -10,8 +10,10 @@
 
 @interface GameResult : NSObject
 
-@property (readonly, strong, nonatomic) NSDate* startTime;
-@property (readonly, strong, nonatomic) NSDate* endTime;
++ (NSDateFormatter*) dateFormatter;
+
+@property (strong, nonatomic) NSDate* startTime;
+@property (strong, nonatomic) NSDate* endTime;
 @property (nonatomic) int score;
 - (NSTimeInterval) duration;
 
