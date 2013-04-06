@@ -39,6 +39,9 @@
 		E7D4D4FE16FA50C700408B8A /* DeckTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D4FD16FA50C700408B8A /* DeckTest.m */; };
 		E7D4D50116FA51D100408B8A /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D50016FA51D100408B8A /* Card.m */; };
 		E7D4D50216FA51D100408B8A /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D50016FA51D100408B8A /* Card.m */; };
+		E7F1959C1710AB80000163EF /* GameResultTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F1959B1710AB80000163EF /* GameResultTest.m */; };
+		E7F1959F1710ABC9000163EF /* GameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F1959E1710ABC9000163EF /* GameResult.m */; };
+		E7F195A01710ABC9000163EF /* GameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F1959E1710ABC9000163EF /* GameResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,10 @@
 		E7D4D4FD16FA50C700408B8A /* DeckTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeckTest.m; path = Model/DeckTest.m; sourceTree = "<group>"; };
 		E7D4D4FF16FA51D100408B8A /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
 		E7D4D50016FA51D100408B8A /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
+		E7F1959A1710AB80000163EF /* GameResultTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResultTest.h; path = Model/GameResultTest.h; sourceTree = "<group>"; };
+		E7F1959B1710AB80000163EF /* GameResultTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameResultTest.m; path = Model/GameResultTest.m; sourceTree = "<group>"; };
+		E7F1959D1710ABC9000163EF /* GameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResult.h; path = Model/GameResult.h; sourceTree = "<group>"; };
+		E7F1959E1710ABC9000163EF /* GameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameResult.m; path = Model/GameResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +139,8 @@
 				E71FD6A81700E2C400D55D24 /* CardMatchingGameTest.m */,
 				E71FD6AE1700F75800D55D24 /* MockDeck.h */,
 				E71FD6AF1700F75800D55D24 /* MockDeck.m */,
+				E7F1959A1710AB80000163EF /* GameResultTest.h */,
+				E7F1959B1710AB80000163EF /* GameResultTest.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -149,6 +158,8 @@
 				E7B1708516FD0F4D00B4B9B6 /* PlayingCardDeck.m */,
 				E71FD6AA1700E5C500D55D24 /* CardMatchingGame.h */,
 				E71FD6AB1700E5C500D55D24 /* CardMatchingGame.m */,
+				E7F1959D1710ABC9000163EF /* GameResult.h */,
+				E7F1959E1710ABC9000163EF /* GameResult.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -351,6 +362,7 @@
 				E7B1708616FD0F4D00B4B9B6 /* PlayingCardDeck.m in Sources */,
 				E71FD6AC1700E5C500D55D24 /* CardMatchingGame.m in Sources */,
 				E71FD6B01700F75800D55D24 /* MockDeck.m in Sources */,
+				E7F1959F1710ABC9000163EF /* GameResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +380,8 @@
 				E71FD6A91700E2C400D55D24 /* CardMatchingGameTest.m in Sources */,
 				E71FD6AD1700E5C500D55D24 /* CardMatchingGame.m in Sources */,
 				E71FD6B11700F75800D55D24 /* MockDeck.m in Sources */,
+				E7F1959C1710AB80000163EF /* GameResultTest.m in Sources */,
+				E7F195A01710ABC9000163EF /* GameResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
