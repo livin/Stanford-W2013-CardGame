@@ -24,6 +24,7 @@
 @interface SetCard : Card
 
 + (BOOL) allValuesSameOrDifferent: (NSArray*)threeItems;
++ (NSArray*) allSymbols;
 
 @property (strong, nonatomic) NSString* symbol;
 @property (nonatomic) int number;

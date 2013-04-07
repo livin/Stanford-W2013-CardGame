@@ -10,6 +10,11 @@
 
 @implementation SetCard
 
++ (NSArray*) allSymbols
+{
+    return @[SYMBOL_CIRLE, SYMBOL_SQUARE, SYMBOL_TRIANGLE];
+}
+
 + (BOOL) allValuesSameOrDifferent: (NSArray*)ii;
 {
     BOOL e1 = [ii[0] isEqual: ii[1]];
