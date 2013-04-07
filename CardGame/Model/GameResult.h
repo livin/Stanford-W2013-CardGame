@@ -17,6 +17,7 @@
 
 + (NSDateFormatter*) dateFormatter;
 
+- (id) initFromPropertyList: (id) plist;
 @property (strong, nonatomic) NSDate* startTime;
 @property (strong, nonatomic) NSDate* endTime;
 @property (nonatomic) int score;

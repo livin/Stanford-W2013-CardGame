@@ -11,14 +11,25 @@
 
 @implementation GameResultTest
 
+
+- (NSDate*) sampleDate100pm
+{
+    return [[GameResult dateFormatter] dateFromString: @"4/6/13 1:00PM"];
+}
+
+- (NSDate*) sampleDate105pm
+{
+    return [[GameResult dateFormatter] dateFromString: @"4/6/13 1:05PM"];
+}
+
 - (GameResult*) sampleGameResultWith15Scores
 {
     GameResult* gr = [[GameResult alloc] init];
     gr.score = 15;
     
     // we set dates manually for this test
-    gr.startTime = [[GameResult dateFormatter] dateFromString: @"4/6/13 1:00PM"];
-    gr.endTime = [[GameResult dateFormatter] dateFromString: @"4/6/13 1:05PM"];
+    gr.startTime = [self sampleDate100pm];
+    gr.endTime = [self sampleDate105pm];
     
     return gr;
 }
@@ -84,6 +95,19 @@
     ourGameResult = allResults[[gr.startTime description]];
     STAssertEqualObjects(ourGameResult[START_KEY], gr.startTime, @"The start time saved should match game's start time");
     STAssertEqualObjects(ourGameResult[END_KEY], gr.endTime, @"The end time saved should match game's end time");    
+}
+
+- (void) testInitFromPropertyList
+{
+    NSDictionary* plist = @{START_KEY: [self sampleDate100pm], END_KEY: [self sampleDate105pm], SCORE_KEY: @(15)};
+    
+    GameResult* gr = [[GameResult alloc] initFromPropertyList: plist];
+    STAssertEqualObjects(gr.startTime,  [self sampleDate100pm], @"Start Time shold be sample 1:00PM time");
+    STAssertEqualObjects(gr.endTime,  [self sampleDate105pm], @"End Time should be sample 1:05PM time");
+    STAssertEquals(gr.score,  15, @"Score should be 15");
+    
+    NSDictionary* broken = @{START_KEY: [self sampleDate100pm], SCORE_KEY: @(15)};    
+    STAssertNil([[GameResult alloc] initFromPropertyList: broken], @"No game result should be created from broken plist");
 }
 
 @end

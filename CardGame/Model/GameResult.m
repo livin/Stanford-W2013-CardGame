@@ -32,6 +32,23 @@ static NSDateFormatter* dateFormatter;
     return self;
 }
 
+- (id) initFromPropertyList: (id) plist
+{
+    self = [self init];
+    if (self) {
+        if ([plist isKindOfClass: [NSDictionary class]]) {
+            NSDictionary* dictionary = (NSDictionary*) plist;
+            _startTime = dictionary[START_KEY];
+            _endTime = dictionary[END_KEY];
+            _score = [((NSNumber*)dictionary[SCORE_KEY]) intValue];
+            
+            if (!_startTime || !_endTime)
+                self = nil;
+        }
+    }
+    return self;
+}
+
 - (void) setScore:(int)score
 {
     _score = score;
