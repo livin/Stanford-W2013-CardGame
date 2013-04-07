@@ -15,6 +15,7 @@
 
 @interface GameResult : NSObject
 
++ (NSArray*) allGameResults;
 + (NSDateFormatter*) dateFormatter;
 
 - (id) initFromPropertyList: (id) plist;
