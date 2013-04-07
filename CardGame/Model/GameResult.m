@@ -9,14 +9,25 @@
 #import "GameResult.h"
 
 static NSDateFormatter* dateFormatter;
+static NSUserDefaults* userDefaults;
 
 @implementation GameResult
+
++ (NSUserDefaults*) userDefaults
+{
+    return userDefaults?userDefaults:[NSUserDefaults standardUserDefaults];
+}
+
++ (void) setUserDefaults: (NSUserDefaults*)aUserDefaults
+{
+    userDefaults = aUserDefaults;
+}
 
 + (NSArray*) allGameResults
 {
     NSMutableArray* gameResults = [[NSMutableArray alloc] init];
     
-    NSDictionary* allGameResultsDictionary = [[NSUserDefaults standardUserDefaults] dictionaryForKey: ALL_RESULTS_KEY];
+    NSDictionary* allGameResultsDictionary = [[[self class] userDefaults] dictionaryForKey: ALL_RESULTS_KEY];
     for(id plist in [allGameResultsDictionary allValues]) {
         GameResult* gr = [[GameResult alloc] initFromPropertyList: plist];
         [gameResults addObject: gr];
@@ -82,7 +93,7 @@ static NSDateFormatter* dateFormatter;
 
 - (void) synchronize
 {
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults* defaults = [[self class] userDefaults];
     NSMutableDictionary* allResults = [[defaults dictionaryForKey: ALL_RESULTS_KEY] mutableCopy];
     
     if (!allResults)

@@ -8,6 +8,11 @@
 
 #import "GameResultTest.h"
 #import "GameResult.h"
+#import "MockUserDefaults.h"
+
+@interface GameResultTest()
+@property (strong, nonatomic) NSUserDefaults* userDefaults;
+@end
 
 @implementation GameResultTest
 
@@ -32,6 +37,13 @@
     gr.endTime = [self sampleDate105pm];
     
     return gr;
+}
+
+- (void) setUp
+{
+    [super setUp];
+    self.userDefaults = (NSUserDefaults*) [[MockUserDefaults alloc] init];
+    [GameResult setUserDefaults: self.userDefaults];
 }
 
 - (void) testCreate
@@ -85,7 +97,7 @@
     GameResult* gr = [self sampleGameResultWith15Scores];
     [gr synchronize];
     
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults* defaults = self.userDefaults;
     NSDictionary* allResults = [defaults dictionaryForKey: ALL_RESULTS_KEY];
     STAssertNotNil(allResults, @"We should have the results now after syncing");
 

@@ -14,6 +14,7 @@
 		E71FD6B01700F75800D55D24 /* MockDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E71FD6AF1700F75800D55D24 /* MockDeck.m */; };
 		E71FD6B11700F75800D55D24 /* MockDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E71FD6AF1700F75800D55D24 /* MockDeck.m */; };
 		E79178FF17115C4B00F90F3B /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79178FE17115C4B00F90F3B /* GameResultViewController.m */; };
+		E791790217116B6700F90F3B /* MockUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = E791790117116B6700F90F3B /* MockUserDefaults.m */; };
 		E7B1707C16FCFF8700B4B9B6 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B1707B16FCFF8700B4B9B6 /* PlayingCard.m */; };
 		E7B1707D16FCFF8800B4B9B6 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B1707B16FCFF8700B4B9B6 /* PlayingCard.m */; };
 		E7B1708016FCFFDC00B4B9B6 /* PlayingCardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B1707F16FCFFDC00B4B9B6 /* PlayingCardTest.m */; };
@@ -65,6 +66,8 @@
 		E71FD6AF1700F75800D55D24 /* MockDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockDeck.m; sourceTree = "<group>"; };
 		E79178FD17115C4B00F90F3B /* GameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultViewController.h; sourceTree = "<group>"; };
 		E79178FE17115C4B00F90F3B /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultViewController.m; sourceTree = "<group>"; };
+		E791790017116B6700F90F3B /* MockUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockUserDefaults.h; path = Model/MockUserDefaults.h; sourceTree = "<group>"; };
+		E791790117116B6700F90F3B /* MockUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockUserDefaults.m; path = Model/MockUserDefaults.m; sourceTree = "<group>"; };
 		E7B1707A16FCFF8700B4B9B6 /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCard.h; path = Model/PlayingCard.h; sourceTree = "<group>"; };
 		E7B1707B16FCFF8700B4B9B6 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		E7B1707E16FCFFDC00B4B9B6 /* PlayingCardTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardTest.h; path = Model/PlayingCardTest.h; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				E71FD6AF1700F75800D55D24 /* MockDeck.m */,
 				E7F1959A1710AB80000163EF /* GameResultTest.h */,
 				E7F1959B1710AB80000163EF /* GameResultTest.m */,
+				E791790017116B6700F90F3B /* MockUserDefaults.h */,
+				E791790117116B6700F90F3B /* MockUserDefaults.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				E71FD6B11700F75800D55D24 /* MockDeck.m in Sources */,
 				E7F1959C1710AB80000163EF /* GameResultTest.m in Sources */,
 				E7F195A01710ABC9000163EF /* GameResult.m in Sources */,
+				E791790217116B6700F90F3B /* MockUserDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

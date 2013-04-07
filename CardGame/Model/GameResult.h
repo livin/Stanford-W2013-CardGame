@@ -15,6 +15,8 @@
 
 @interface GameResult : NSObject
 
++ (NSUserDefaults*) userDefaults;
++ (void) setUserDefaults: (NSUserDefaults*)aUserDefaults;
 + (NSArray*) allGameResults;
 + (NSDateFormatter*) dateFormatter;
 
