@@ -8,7 +8,6 @@
 
 #import "CardGameViewController.h"
 #import "PlayingCardDeck.h"
-#import "CardMatchingGame.h"
 #import "GameResult.h"
 
 @interface CardGameViewController ()
@@ -46,20 +45,25 @@
 	return [UIImage imageNamed:@"cardback.png"];
 }
 
+- (void)updateCardButton:(UIButton *)cardButton forCard:(Card *)card
+{
+    [cardButton setTitle: [card contents] forState: UIControlStateSelected];
+    [cardButton setTitle: [card contents] forState: UIControlStateSelected|UIControlStateDisabled];
+    [cardButton setImage: card.isFaceUp?nil:[CardGameViewController cardBackImage]
+                forState: UIControlStateNormal];
+    cardButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
+    cardButton.selected = card.faceUp;
+    cardButton.enabled = !card.isUnplayable;
+    cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
+}
+
 - (void) updateUI
 {
 	for(UIButton* cardButton in self.cardButtons) {
 		NSUInteger index = [self.cardButtons indexOfObject: cardButton];
 		Card* card = [self.game cardAtIndex: index];
 		
-		[cardButton setTitle: [card contents] forState: UIControlStateSelected];
-		[cardButton setTitle: [card contents] forState: UIControlStateSelected|UIControlStateDisabled];
-		[cardButton setImage: card.isFaceUp?nil:[CardGameViewController cardBackImage]
-					forState: UIControlStateNormal];
-		cardButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
-		cardButton.selected = card.faceUp;
-		cardButton.enabled = !card.isUnplayable;
-		cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
+		[self updateCardButton:cardButton forCard:card];
 	}
 	
 	self.scoreLabel.text = [NSString stringWithFormat: @"Score: %d", self.game.score];
@@ -75,11 +79,16 @@
 	[self.historySlider setValue: self.historySlider.maximumValue];
 }
 
+- (CardMatchingGame*) createNewGame
+{
+    Deck* deck = [[PlayingCardDeck alloc] init];
+    return [[CardMatchingGame alloc] initWithCardCount: [self.cardButtons count] usingDeck: deck];
+}
+
 - (CardMatchingGame*) game
 {
 	if (!_game) {
-		Deck* deck = [[PlayingCardDeck alloc] init];
-		_game = [[CardMatchingGame alloc] initWithCardCount: [self.cardButtons count] usingDeck: deck];
+		_game = [self createNewGame];
 		self.firstFlipMade = NO;
 	}
 	return _game;
