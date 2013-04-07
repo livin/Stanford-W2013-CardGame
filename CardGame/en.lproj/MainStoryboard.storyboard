@@ -445,7 +445,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -464,7 +464,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -483,7 +483,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -502,7 +502,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -521,7 +521,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -540,7 +540,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -559,7 +559,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -578,7 +578,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -597,7 +597,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -616,7 +616,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -635,7 +635,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -654,7 +654,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -673,7 +673,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -692,7 +692,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -711,7 +711,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -730,7 +730,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -749,7 +749,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -768,7 +768,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -787,7 +787,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -806,7 +806,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -825,7 +825,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -844,7 +844,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -863,7 +863,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -882,7 +882,7 @@
                                         <fragment content="◼◼◼">
                                             <attributes>
                                                 <color key="NSColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -975,6 +975,33 @@
             <point key="canvasLocation" x="902" y="156"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CardGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changedCardsToOpen:" candidateClass="UISegmentedControl"/>
+                <relationship kind="action" name="deal:" candidateClass="UIButton"/>
+                <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
+                <relationship kind="action" name="historySlide:" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="cardsToOpenControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="historySlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="lastFlipResultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GameResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="display" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="sortSelectorControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="SetGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetGameViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

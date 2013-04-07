@@ -37,11 +37,23 @@
     return self;
 }
 
+- (NSString*) shadedSymbol
+{
+    if ([self.symbol isEqualToString: SYMBOL_CIRLE]) {
+        return @[SYMBOL_CIRLE, @"●", @"◌"][self.shading];
+    } else if ([self.symbol isEqualToString: SYMBOL_SQUARE]) {
+        return @[SYMBOL_SQUARE, @"■", @"⬚"][self.shading];
+    } else if ([self.symbol isEqualToString: SYMBOL_TRIANGLE]) {
+        return @[SYMBOL_TRIANGLE, @"▲", @"◬"][self.shading];
+    }
+    return nil;
+}
+
 - (NSString*) contents
 {
     NSString* s = @"";
     for(int i = 0; i < self.number; i++) {
-        s = [s stringByAppendingString: self.symbol];
+        s = [s stringByAppendingString: [self shadedSymbol]];
     }
     return s;
 }
