@@ -12,6 +12,19 @@ static NSDateFormatter* dateFormatter;
 
 @implementation GameResult
 
++ (NSArray*) allGameResults
+{
+    NSMutableArray* gameResults = [[NSMutableArray alloc] init];
+    
+    NSDictionary* allGameResultsDictionary = [[NSUserDefaults standardUserDefaults] dictionaryForKey: ALL_RESULTS_KEY];
+    for(id plist in [allGameResultsDictionary allValues]) {
+        GameResult* gr = [[GameResult alloc] initFromPropertyList: plist];
+        [gameResults addObject: gr];
+    }
+    
+    return gameResults;
+}
+
 + (NSDateFormatter*) dateFormatter
 {
     if (!dateFormatter) {
