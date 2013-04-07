@@ -11,6 +11,7 @@
 
 @interface GameResultViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *display;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sortSelectorControl;
 @end
 
 @implementation GameResultViewController
@@ -21,9 +22,26 @@
     [self updateDisplay];
 }
 
+- (SEL) sortSelector
+{
+    NSUInteger index = self.sortSelectorControl.selectedSegmentIndex;
+    switch (index) {
+        case 0: return @selector(compareByDate:);
+        case 1: return @selector(compareByScore:);
+        case 2: return @selector(compareByDuration:);
+    }
+    return nil;
+}
+
 - (void) updateDisplay
 {
-    self.display.text = [[GameResult allGameResults] componentsJoinedByString: @"\n"];    
+    NSArray* results = [[GameResult allGameResults] sortedArrayUsingSelector:[self sortSelector]];
+        
+    self.display.text = [results componentsJoinedByString: @"\n"];
+}
+
+- (IBAction)sprtSelectionChanged {
+    [self updateDisplay];
 }
 
 - (IBAction)resetAllScores:(id)sender {

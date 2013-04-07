@@ -109,4 +109,20 @@ static NSUserDefaults* userDefaults;
     return @{START_KEY: self.startTime, END_KEY: self.endTime, SCORE_KEY: @(self.score)};
 }
 
+- (NSComparisonResult) compareByDate: (GameResult*) another
+{
+    return [self.startTime compare: another.startTime];
+}
+
+- (NSComparisonResult) compareByScore: (GameResult*) another
+{
+    return [@(another.score) compare: @(self.score)];
+}
+
+- (NSComparisonResult) compareByDuration: (GameResult*) another
+{
+    return [@([self duration]) compare: @([another duration])];
+}
+
+
 @end
