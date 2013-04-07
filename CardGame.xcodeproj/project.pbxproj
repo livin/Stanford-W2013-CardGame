@@ -16,6 +16,9 @@
 		E778872D1711F3AB0012B5E4 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E778872C1711F3AB0012B5E4 /* SetCard.m */; };
 		E778872E1711F3AB0012B5E4 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E778872C1711F3AB0012B5E4 /* SetCard.m */; };
 		E77887311711F3D60012B5E4 /* SetCardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E77887301711F3D60012B5E4 /* SetCardTest.m */; };
+		E778873417120C3F0012B5E4 /* SetCardDeckTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E778873317120C3E0012B5E4 /* SetCardDeckTest.m */; };
+		E778873717120C7A0012B5E4 /* SetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E778873617120C7A0012B5E4 /* SetCardDeck.m */; };
+		E778873817120C7A0012B5E4 /* SetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E778873617120C7A0012B5E4 /* SetCardDeck.m */; };
 		E79178FF17115C4B00F90F3B /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79178FE17115C4B00F90F3B /* GameResultViewController.m */; };
 		E791790217116B6700F90F3B /* MockUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = E791790117116B6700F90F3B /* MockUserDefaults.m */; };
 		E7B1707C16FCFF8700B4B9B6 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B1707B16FCFF8700B4B9B6 /* PlayingCard.m */; };
@@ -71,6 +74,10 @@
 		E778872C1711F3AB0012B5E4 /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCard.m; sourceTree = "<group>"; };
 		E778872F1711F3D60012B5E4 /* SetCardTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCardTest.h; path = Model/SetCardTest.h; sourceTree = "<group>"; };
 		E77887301711F3D60012B5E4 /* SetCardTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCardTest.m; path = Model/SetCardTest.m; sourceTree = "<group>"; };
+		E778873217120C3E0012B5E4 /* SetCardDeckTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCardDeckTest.h; path = Model/SetCardDeckTest.h; sourceTree = "<group>"; };
+		E778873317120C3E0012B5E4 /* SetCardDeckTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCardDeckTest.m; path = Model/SetCardDeckTest.m; sourceTree = "<group>"; };
+		E778873517120C7A0012B5E4 /* SetCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardDeck.h; sourceTree = "<group>"; };
+		E778873617120C7A0012B5E4 /* SetCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardDeck.m; sourceTree = "<group>"; };
 		E79178FD17115C4B00F90F3B /* GameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultViewController.h; sourceTree = "<group>"; };
 		E79178FE17115C4B00F90F3B /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultViewController.m; sourceTree = "<group>"; };
 		E791790017116B6700F90F3B /* MockUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockUserDefaults.h; path = Model/MockUserDefaults.h; sourceTree = "<group>"; };
@@ -150,6 +157,8 @@
 				E77887301711F3D60012B5E4 /* SetCardTest.m */,
 				E7B1708116FD0F1400B4B9B6 /* PlayingCardDeckTest.h */,
 				E7B1708216FD0F1400B4B9B6 /* PlayingCardDeckTest.m */,
+				E778873217120C3E0012B5E4 /* SetCardDeckTest.h */,
+				E778873317120C3E0012B5E4 /* SetCardDeckTest.m */,
 				E71FD6A71700E2C400D55D24 /* CardMatchingGameTest.h */,
 				E71FD6A81700E2C400D55D24 /* CardMatchingGameTest.m */,
 				E71FD6AE1700F75800D55D24 /* MockDeck.h */,
@@ -175,6 +184,8 @@
 				E7B1708516FD0F4D00B4B9B6 /* PlayingCardDeck.m */,
 				E778872B1711F3AB0012B5E4 /* SetCard.h */,
 				E778872C1711F3AB0012B5E4 /* SetCard.m */,
+				E778873517120C7A0012B5E4 /* SetCardDeck.h */,
+				E778873617120C7A0012B5E4 /* SetCardDeck.m */,
 				E71FD6AA1700E5C500D55D24 /* CardMatchingGame.h */,
 				E71FD6AB1700E5C500D55D24 /* CardMatchingGame.m */,
 				E7F1959D1710ABC9000163EF /* GameResult.h */,
@@ -386,6 +397,7 @@
 				E7F1959F1710ABC9000163EF /* GameResult.m in Sources */,
 				E79178FF17115C4B00F90F3B /* GameResultViewController.m in Sources */,
 				E778872D1711F3AB0012B5E4 /* SetCard.m in Sources */,
+				E778873717120C7A0012B5E4 /* SetCardDeck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +420,8 @@
 				E791790217116B6700F90F3B /* MockUserDefaults.m in Sources */,
 				E778872E1711F3AB0012B5E4 /* SetCard.m in Sources */,
 				E77887311711F3D60012B5E4 /* SetCardTest.m in Sources */,
+				E778873417120C3F0012B5E4 /* SetCardDeckTest.m in Sources */,
+				E778873817120C7A0012B5E4 /* SetCardDeck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

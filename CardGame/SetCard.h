@@ -13,7 +13,6 @@
 #define SYMBOL_TRIANGLE @"△"
 #define SYMBOL_SQUARE @"◻"
 
-#define SETCOLOR_BLACK 0
 #define SETCOLOR_RED 1
 #define SETCOLOR_GREEN 2
 #define SETCOLOR_BLUE 3
