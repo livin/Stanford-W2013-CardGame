@@ -26,4 +26,10 @@
     self.display.text = [[GameResult allGameResults] componentsJoinedByString: @"\n"];    
 }
 
+- (IBAction)resetAllScores:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setObject: nil forKey:ALL_RESULTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self updateDisplay];
+}
+
 @end
