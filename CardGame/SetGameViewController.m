@@ -26,14 +26,30 @@
     cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     
     // coloring
-    UIColor* foregroundColor = @[[UIColor blackColor], [UIColor redColor], [UIColor greenColor], [UIColor blueColor]][setCard.color];
+    UIColor* cardColor = @[[UIColor blackColor], [UIColor redColor], [UIColor greenColor], [UIColor blueColor]][setCard.color];
         
     NSMutableParagraphStyle * paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];    
     [paragraphStyle setAlignment: NSTextAlignmentCenter];
     
+    NSNumber* strokeWidth = @(0);
+    UIColor* strokeColor = [UIColor clearColor];
+    UIColor* foregroundColor = cardColor;
+    
+    if (setCard.shading == SHADING_OPEN) {
+        strokeWidth = @(-10.0);
+        strokeColor = cardColor;
+        foregroundColor = [UIColor clearColor];
+    } else if (setCard.shading == SHADING_SHADE) {
+        strokeWidth = @(-10.0);
+        strokeColor = cardColor;
+        foregroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent: 0.3];
+    }
+    
     NSDictionary* attributes =
         @{ NSForegroundColorAttributeName: foregroundColor,
-           NSParagraphStyleAttributeName: paragraphStyle
+           NSParagraphStyleAttributeName: paragraphStyle,
+           NSStrokeWidthAttributeName: strokeWidth,
+           NSStrokeColorAttributeName: strokeColor
            };    
     
     NSMutableAttributedString* a = [[NSMutableAttributedString alloc] initWithString:[card contents] attributes:attributes];
