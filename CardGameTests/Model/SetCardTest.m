@@ -20,11 +20,7 @@
 - (void) testContents
 {
     SetCard* card = [[SetCard alloc] initWithNumber:3 symbol: SYMBOL_CIRLE color: SETCOLOR_RED shading: SHADING_OPEN];
-    STAssertEqualObjects([card contents], @"○○○", @"Contents of 3 black open circles should be 3 circles string");
-    
-    card = [[SetCard alloc] initWithNumber:3 symbol: SYMBOL_CIRLE color: SETCOLOR_RED shading: SHADING_SOLID];
-    STAssertEqualObjects([card contents], @"●●●", @"Contents of 3 black solid circles should be 3 solid circles string");
-    
+    STAssertEqualObjects([card contents], @"●●●", @"Contents of 3 black open circles should be 3 circles string (solid)");
 }
 
 - (void) testAllValuesSameOrDifferent

@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 
-#define SYMBOL_CIRLE @"○"
-#define SYMBOL_TRIANGLE @"△"
-#define SYMBOL_SQUARE @"◻"
+#define SYMBOL_CIRLE 0
+#define SYMBOL_TRIANGLE 1
+#define SYMBOL_SQUARE 2
 
 #define SETCOLOR_RED 1
 #define SETCOLOR_GREEN 2
@@ -24,13 +24,12 @@
 @interface SetCard : Card
 
 + (BOOL) allValuesSameOrDifferent: (NSArray*)threeItems;
-+ (NSArray*) allSymbols;
 
-@property (strong, nonatomic) NSString* symbol;
+@property (nonatomic) int symbol;
 @property (nonatomic) int number;
 @property (nonatomic) int color;
 @property (nonatomic) int shading;
 
-- (id) initWithNumber: (int)number symbol: (NSString*)symbol color: (int)color shading: (int)shading;
+- (id) initWithNumber: (int)number symbol: (int)symbol color: (int)color shading: (int)shading;
 
 @end

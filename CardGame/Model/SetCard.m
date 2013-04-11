@@ -10,11 +10,6 @@
 
 @implementation SetCard
 
-+ (NSArray*) allSymbols
-{
-    return @[SYMBOL_CIRLE, SYMBOL_SQUARE, SYMBOL_TRIANGLE];
-}
-
 + (BOOL) allValuesSameOrDifferent: (NSArray*)ii;
 {
     BOOL e1 = [ii[0] isEqual: ii[1]];
@@ -23,7 +18,11 @@
     return (e1 && e2 && e3) || ((!e1) && (!e2) && (!e3));
 }
 
-- (id) initWithNumber: (int)number symbol: (NSString*)symbol color: (int)color shading: (int)shading
++ (NSArray*) stringSymbols {
+    return @[@"●", @"■", @"▲"];
+}
+
+- (id) initWithNumber: (int)number symbol: (int)symbol color: (int)color shading: (int)shading
 {
     self = [super init];
     
@@ -37,23 +36,16 @@
     return self;
 }
 
-- (NSString*) shadedSymbol
+- (NSString*) symbolString
 {
-    if ([self.symbol isEqualToString: SYMBOL_CIRLE]) {
-        return @[SYMBOL_CIRLE, @"●", @"◌"][self.shading];
-    } else if ([self.symbol isEqualToString: SYMBOL_SQUARE]) {
-        return @[SYMBOL_SQUARE, @"■", @"⬚"][self.shading];
-    } else if ([self.symbol isEqualToString: SYMBOL_TRIANGLE]) {
-        return @[SYMBOL_TRIANGLE, @"▲", @"◬"][self.shading];
-    }
-    return nil;
+    return [[self class] stringSymbols][self.symbol];
 }
 
 - (NSString*) contents
 {
     NSString* s = @"";
     for(int i = 0; i < self.number; i++) {
-        s = [s stringByAppendingString: [self shadedSymbol]];
+        s = [s stringByAppendingString: [self symbolString]];
     }
     return s;
 }
@@ -69,7 +61,7 @@
     
     return
         [SetCard allValuesSameOrDifferent: @[@(c1.number), @(c2.number), @(c3.number)]] &&
-        [SetCard allValuesSameOrDifferent: @[c1.symbol, c2.symbol, c3.symbol]] &&
+        [SetCard allValuesSameOrDifferent: @[@(c1.symbol), @(c2.symbol), @(c3.symbol)]] &&
         [SetCard allValuesSameOrDifferent: @[@(c1.color), @(c2.color), @(c3.color)]] &&
         [SetCard allValuesSameOrDifferent: @[@(c1.shading), @(c2.shading), @(c3.shading)]];
 }
