@@ -11,7 +11,7 @@
 @interface CardMatchingGame()
 @property (strong, nonatomic) NSMutableArray* cards;
 @property (readwrite, nonatomic) int score;
-@property (readwrite, strong, nonatomic) NSString* lastFlipResult;
+@property (readwrite, strong, nonatomic) FlipResult* lastFlipResult;
 @end
 
 @implementation CardMatchingGame
@@ -53,12 +53,12 @@
 	return _cards;
 }
 
-- (NSString*) lastFlipResult
+- (FlipResult*) lastFlipResult
 {
-	return _lastFlipResult?_lastFlipResult:@"";
+	return _lastFlipResult?_lastFlipResult:[FlipResult NoneFlipResult];
 }
 
-- (void) setLastFlipResult:(NSString *)lastFlipResult
+- (void) setLastFlipResult:(FlipResult*)lastFlipResult
 {
 	_lastFlipResult = lastFlipResult;
 	[self.flipHistory addObject: lastFlipResult];
@@ -84,13 +84,18 @@
 			NSArray* faceUpCards = [self faceUpCards];
 			if ([faceUpCards count] + 1 == self.maxCardsToOpen) {
 				int matchScore = [card match: faceUpCards];
+                
+                NSMutableArray* allCards = [[NSMutableArray alloc] init];
+                [allCards addObject: card];
+                [allCards addObjectsFromArray: faceUpCards];                
+                
 				if (matchScore) {
 					int matchScoreWithBonus = matchScore * self.matchBonus;
 					self.score += matchScore * self.matchBonus;
-					self.lastFlipResult = [self cardsMatchMessage:card cards: faceUpCards withPoints: matchScoreWithBonus];
+					self.lastFlipResult = [[FlipResult alloc] initWithType: FLIPRESULT_MATCH cards: allCards points: matchScoreWithBonus];
 				} else {
 					self.score -= self.mismatchPenalty;
-					self.lastFlipResult = [self cardsMismatchMessage:card cards: faceUpCards withPoints: self.mismatchPenalty];
+					self.lastFlipResult = [[FlipResult alloc] initWithType: FLIPRESULT_MISMATCH cards: allCards points: self.mismatchPenalty];
 				}
 				
 				card.unplayable = YES;
@@ -98,36 +103,13 @@
 					card.unplayable = YES;
 				}
 			} else {
-				self.lastFlipResult = [@"Flipped up " stringByAppendingString: [card contents]];
+				self.lastFlipResult = [[FlipResult alloc] initWithType:FLIPRESULT_FLIPPED_UP cards: @[card] points: 0];
 			}
 			
 			self.score -= self.flipCost;
 		}
 		card.faceUp = !card.isFaceUp;
 	}
-}
-
-- (NSString*) cardsMatchMessage:(Card*) first cards: (NSArray*) cards withPoints: (int) points
-{	
-	return [NSString stringWithFormat:@"Matched %@ for %d points", [self cardNamesWith:first andCards: cards], points];
-}
-
-- (NSString*) cardsMismatchMessage:(Card*) first cards: (NSArray*) cards withPoints: (int) points
-{	
-	return [NSString stringWithFormat:@"%@ don't match! %d points penalty!", [self cardNamesWith:first andCards: cards], points];
-}
-
-
-- (NSString*) cardNamesWith:(Card*) first andCards: (NSArray*) cards
-{
-	NSMutableArray* cardNames = [[NSMutableArray alloc] init];
-	[cardNames addObject: [first contents]];
-	for(Card* card in cards) {
-		[cardNames addObject: [card contents]];
-	}
-	
-	NSString* cardsString = [cardNames componentsJoinedByString: @" & "];
-	return cardsString;
 }
 
 - (NSArray*) faceUpCards

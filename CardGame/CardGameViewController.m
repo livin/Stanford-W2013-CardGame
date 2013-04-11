@@ -9,6 +9,7 @@
 #import "CardGameViewController.h"
 #import "PlayingCardDeck.h"
 #import "GameResult.h"
+#import "FlipResult.h"
 
 @interface CardGameViewController ()
 
@@ -68,7 +69,7 @@
 	
 	self.scoreLabel.text = [NSString stringWithFormat: @"Score: %d", self.game.score];
 	
-	self.lastFlipResultLabel.text = [self.game lastFlipResult];
+	[self updateLastFlipMessage: self.game.lastFlipResult];
 	self.lastFlipResultLabel.alpha = 1;
 	
 	self.cardsToOpenControl.enabled = !self.firstFlipMade;
@@ -77,6 +78,46 @@
 	int flipsInHistory = [self.game.flipHistory count];
 	[self.historySlider setMaximumValue: flipsInHistory?(flipsInHistory-1):0];
 	[self.historySlider setValue: self.historySlider.maximumValue];
+}
+
+- (void) updateLastFlipMessage: (FlipResult*) flipResult
+{
+    self.lastFlipResultLabel.text = [self cardMatchMessageForFlipResult: flipResult];
+}
+
+- (NSString*) cardMatchMessageForFlipResult: (FlipResult*) flipResult
+{
+    switch (flipResult.type) {
+        case FLIPRESULT_FLIPPED_UP:
+            return [@"Flipped up " stringByAppendingString: [flipResult.cards[0] contents]];
+        case FLIPRESULT_MATCH:
+            return [self cardsMatchMessage: flipResult.cards withPoints: flipResult.points];
+        case FLIPRESULT_MISMATCH:
+            return [self cardsMismatchMessage: flipResult.cards withPoints: flipResult.points];
+    }
+    return @"";
+}
+
+- (NSString*) cardsMatchMessage: (NSArray*) cards withPoints: (int) points
+{
+	return [NSString stringWithFormat:@"Matched %@ for %d points", [self cardNames: cards], points];
+}
+
+- (NSString*) cardsMismatchMessage:(NSArray*) cards withPoints: (int) points
+{
+	return [NSString stringWithFormat:@"%@ don't match! %d points penalty!", [self cardNames: cards], points];
+}
+
+
+- (NSString*) cardNames:(NSArray*) cards
+{
+	NSMutableArray* cardNames = [[NSMutableArray alloc] init];
+	for(Card* card in cards) {
+		[cardNames addObject: [card contents]];
+	}
+	
+	NSString* cardsString = [cardNames componentsJoinedByString: @" & "];
+	return cardsString;
 }
 
 - (CardMatchingGame*) createNewGame

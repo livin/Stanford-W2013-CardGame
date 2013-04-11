@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Deck.h"
 #import "Card.h"
+#import "FlipResult.h"
 
 @interface CardMatchingGame : NSObject
 
@@ -20,7 +21,7 @@
 - (void) flipCardAtIndex:(NSUInteger)index;
 - (Card*) cardAtIndex:(NSUInteger)index;
 @property (readonly, nonatomic) int score;
-@property (readonly, strong, nonatomic) NSString* lastFlipResult;
+@property (readonly, strong, nonatomic) FlipResult* lastFlipResult;
 @property (strong, nonatomic) NSMutableArray* flipHistory;
 @property (nonatomic) NSUInteger maxCardsToOpen;
 

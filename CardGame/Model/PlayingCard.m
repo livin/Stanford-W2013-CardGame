@@ -101,4 +101,13 @@
 	return MAX(0, MAX(suitsScore, ranksScore));
 }
 
+- (BOOL) isEqual:(id)object
+{
+    if ([object isKindOfClass: [PlayingCard class]]) {
+        PlayingCard* another = (PlayingCard*)object;
+        return (self.rank == another.rank) && ([self.suit isEqualToString: another.suit]);
+    }
+    return NO;
+}
+
 @end

@@ -11,6 +11,7 @@
 #import "PlayingCardDeck.h"
 #import "MockDeck.h"
 #import "PlayingCard.h"
+#import "FlipResult.h"
 
 @implementation CardMatchingGameTest
 
@@ -110,19 +111,32 @@
 	CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: [cards count] usingDeck: deck];
 	
 	[game flipCardAtIndex: 0];
-	STAssertEqualObjects([game lastFlipResult], @"Flipped up A♦", @"A♦ should be last flip result");
+    FlipResult* lastFlipResult = [game lastFlipResult];
+    STAssertEquals(lastFlipResult.type, FLIPRESULT_FLIPPED_UP, @"Flipped up");
+    STAssertEqualObjects(lastFlipResult.cards, @[c1], @"A♦");
 	
 	[game flipCardAtIndex: 1];
-	STAssertEqualObjects([game lastFlipResult], @"Matched 3♦ & A♦ for 4 points", @"We should get flip match message when cards match");
+    lastFlipResult = [game lastFlipResult];
+    STAssertEquals(lastFlipResult.type, FLIPRESULT_MATCH, @"Matched");
+    NSArray* c1c2 = @[c2,c1];
+    STAssertEqualObjects(lastFlipResult.cards, c1c2, @"3♦ & A♦");
+    STAssertEquals(lastFlipResult.points, 4, @"for 4 points");
 
 	[game flipCardAtIndex: 2];
-	STAssertEqualObjects([game lastFlipResult], @"Flipped up 2♣", @"Flipping third card should give another flipped up message");
+    lastFlipResult = [game lastFlipResult];
+    FlipResult* thirdFlipResult = lastFlipResult;
+    STAssertEquals(lastFlipResult.type, FLIPRESULT_FLIPPED_UP, @"Flipped up");
+    STAssertEqualObjects(lastFlipResult.cards, @[c3], @"2♣");
 	
 	[game flipCardAtIndex: 3];
-	STAssertEqualObjects([game lastFlipResult], @"3♦ & 2♣ don't match! 2 points penalty!", @"When cards don't match we should get don't match message");
+    lastFlipResult = [game lastFlipResult];
+    STAssertEquals(lastFlipResult.type, FLIPRESULT_MISMATCH, @"Don't match");
+    NSArray* c3c4 = @[c4,c3];
+    STAssertEqualObjects(lastFlipResult.cards, c3c4, @"3♦ & 2♣");
+    STAssertEquals(lastFlipResult.points, 2, @"2 points penalty");
 		
 	STAssertEquals([game.flipHistory count], (NSUInteger)4, @"Game now should have flip history of 4 items");
-	STAssertEqualObjects(game.flipHistory[2], @"Flipped up 2♣", @"The third item of flip (index=2) should be 'Flipped up 2♣'");
+	STAssertEqualObjects(game.flipHistory[2], thirdFlipResult, @"The third item of flip (index=2) should be 'Flipped up 2♣'");
 }
 
 - (void) assertFlipCardsGame: (NSArray*) cards scores: (int) score because: (NSString*) description

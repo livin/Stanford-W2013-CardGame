@@ -13,6 +13,9 @@
 		E71FD6AD1700E5C500D55D24 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = E71FD6AB1700E5C500D55D24 /* CardMatchingGame.m */; };
 		E71FD6B01700F75800D55D24 /* MockDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E71FD6AF1700F75800D55D24 /* MockDeck.m */; };
 		E71FD6B11700F75800D55D24 /* MockDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E71FD6AF1700F75800D55D24 /* MockDeck.m */; };
+		E744345717176FB6001BAC82 /* FlipResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E744345617176FB6001BAC82 /* FlipResult.m */; };
+		E744345817176FB6001BAC82 /* FlipResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E744345617176FB6001BAC82 /* FlipResult.m */; };
+		E744345B1717709C001BAC82 /* FlipResultTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E744345A1717709C001BAC82 /* FlipResultTest.m */; };
 		E778872D1711F3AB0012B5E4 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E778872C1711F3AB0012B5E4 /* SetCard.m */; };
 		E778872E1711F3AB0012B5E4 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E778872C1711F3AB0012B5E4 /* SetCard.m */; };
 		E77887311711F3D60012B5E4 /* SetCardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E77887301711F3D60012B5E4 /* SetCardTest.m */; };
@@ -75,6 +78,10 @@
 		E71FD6AB1700E5C500D55D24 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
 		E71FD6AE1700F75800D55D24 /* MockDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDeck.h; path = Model/MockDeck.h; sourceTree = "<group>"; };
 		E71FD6AF1700F75800D55D24 /* MockDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockDeck.m; path = Model/MockDeck.m; sourceTree = "<group>"; };
+		E744345517176FB6001BAC82 /* FlipResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipResult.h; path = Model/FlipResult.h; sourceTree = "<group>"; };
+		E744345617176FB6001BAC82 /* FlipResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipResult.m; path = Model/FlipResult.m; sourceTree = "<group>"; };
+		E74434591717709C001BAC82 /* FlipResultTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipResultTest.h; path = Model/FlipResultTest.h; sourceTree = "<group>"; };
+		E744345A1717709C001BAC82 /* FlipResultTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipResultTest.m; path = Model/FlipResultTest.m; sourceTree = "<group>"; };
 		E778872B1711F3AB0012B5E4 /* SetCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCard.h; path = Model/SetCard.h; sourceTree = "<group>"; };
 		E778872C1711F3AB0012B5E4 /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCard.m; path = Model/SetCard.m; sourceTree = "<group>"; };
 		E778872F1711F3D60012B5E4 /* SetCardTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCardTest.h; path = Model/SetCardTest.h; sourceTree = "<group>"; };
@@ -172,6 +179,8 @@
 				E778873317120C3E0012B5E4 /* SetCardDeckTest.m */,
 				E71FD6A71700E2C400D55D24 /* CardMatchingGameTest.h */,
 				E71FD6A81700E2C400D55D24 /* CardMatchingGameTest.m */,
+				E74434591717709C001BAC82 /* FlipResultTest.h */,
+				E744345A1717709C001BAC82 /* FlipResultTest.m */,
 				E7788739171215AE0012B5E4 /* SetGameTest.h */,
 				E778873A171215AF0012B5E4 /* SetGameTest.m */,
 				E71FD6AE1700F75800D55D24 /* MockDeck.h */,
@@ -201,6 +210,8 @@
 				E778873617120C7A0012B5E4 /* SetCardDeck.m */,
 				E71FD6AA1700E5C500D55D24 /* CardMatchingGame.h */,
 				E71FD6AB1700E5C500D55D24 /* CardMatchingGame.m */,
+				E744345517176FB6001BAC82 /* FlipResult.h */,
+				E744345617176FB6001BAC82 /* FlipResult.m */,
 				E778873C171216020012B5E4 /* SetGame.h */,
 				E778873D171216020012B5E4 /* SetGame.m */,
 				E7F1959D1710ABC9000163EF /* GameResult.h */,
@@ -417,6 +428,7 @@
 				E778873717120C7A0012B5E4 /* SetCardDeck.m in Sources */,
 				E778873E171216030012B5E4 /* SetGame.m in Sources */,
 				E778874217121D600012B5E4 /* SetGameViewController.m in Sources */,
+				E744345717176FB6001BAC82 /* FlipResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +456,8 @@
 				E778873B171215AF0012B5E4 /* SetGameTest.m in Sources */,
 				E778873F171216030012B5E4 /* SetGame.m in Sources */,
 				E778874317121D600012B5E4 /* SetGameViewController.m in Sources */,
+				E744345817176FB6001BAC82 /* FlipResult.m in Sources */,
+				E744345B1717709C001BAC82 /* FlipResultTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
