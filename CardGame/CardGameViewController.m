@@ -149,6 +149,7 @@
         if (currentCardNumber < lastCardNumber) {
             [s appendAttributedString: [[NSMutableAttributedString alloc] initWithString: @" & "]];
         }
+        currentCardNumber++;
     }
     return s;
 }
