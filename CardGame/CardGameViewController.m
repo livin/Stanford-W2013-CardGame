@@ -81,43 +81,76 @@
 
 - (void) updateLastFlipMessage: (FlipResult*) flipResult pastFlip: (BOOL) pastFlip
 {
-    self.lastFlipResultLabel.text = [self cardMatchMessageForFlipResult: flipResult];
+    NSAttributedString* flipResultContents = [self cardMatchMessageForFlipResult: flipResult];
+    self.lastFlipResultLabel.attributedText = [self wrapFlipResultMessageStyles: flipResultContents];
     self.lastFlipResultLabel.alpha = pastFlip? 0.55 : 1;
 }
 
-- (NSString*) cardMatchMessageForFlipResult: (FlipResult*) flipResult
+- (NSAttributedString*) wrapFlipResultMessageStyles: (NSAttributedString*) message
+{
+    NSMutableAttributedString* s = [[NSMutableAttributedString alloc] initWithAttributedString: message];
+    
+    NSMutableParagraphStyle* paragraph = [[NSMutableParagraphStyle alloc] init];
+    paragraph.alignment = NSTextAlignmentCenter;
+    
+    [s setAttributes: @{ NSFontAttributeName: [UIFont systemFontOfSize: 14], NSParagraphStyleAttributeName: paragraph}
+               range: NSMakeRange(0, s.string.length)];
+    
+    return s;
+}
+
+- (NSAttributedString*) cardMatchMessageForFlipResult: (FlipResult*) flipResult
 {
     switch (flipResult.type) {
         case FLIPRESULT_FLIPPED_UP:
-            return [@"Flipped up " stringByAppendingString: [flipResult.cards[0] contents]];
+            return [self flippedUpMessage: flipResult.cards[0]];
         case FLIPRESULT_MATCH:
             return [self cardsMatchMessage: flipResult.cards withPoints: flipResult.points];
         case FLIPRESULT_MISMATCH:
             return [self cardsMismatchMessage: flipResult.cards withPoints: flipResult.points];
     }
-    return @"";
+    return [[NSMutableAttributedString alloc] initWithString: @""];
 }
 
-- (NSString*) cardsMatchMessage: (NSArray*) cards withPoints: (int) points
+- (NSAttributedString*) flippedUpMessage: (Card*) card
 {
-	return [NSString stringWithFormat:@"Matched %@ for %d points", [self cardNames: cards], points];
+    NSMutableAttributedString* s = [[NSMutableAttributedString alloc] init];
+    [s appendAttributedString: [[NSMutableAttributedString alloc] initWithString: @"Flipped up "]];
+    [s appendAttributedString: [self cardsUnionMessage: @[card]]];
+    return s;
 }
 
-- (NSString*) cardsMismatchMessage:(NSArray*) cards withPoints: (int) points
+- (NSAttributedString*) cardsMatchMessage: (NSArray*) cards withPoints: (int) points
 {
-	return [NSString stringWithFormat:@"%@ don't match! %d points penalty!", [self cardNames: cards], points];
+    NSMutableAttributedString* s = [[NSMutableAttributedString alloc] init];
+    [s appendAttributedString: [[NSMutableAttributedString alloc] initWithString: @"Matched "]];
+    [s appendAttributedString: [self cardsUnionMessage: cards]];
+    NSString* forPointsString = [NSString stringWithFormat: @" for %d points", points];
+    [s appendAttributedString: [[NSMutableAttributedString alloc] initWithString: forPointsString]];    
+    return s;
 }
 
-
-- (NSString*) cardNames:(NSArray*) cards
+- (NSAttributedString*) cardsMismatchMessage:(NSArray*) cards withPoints: (int) points
 {
-	NSMutableArray* cardNames = [[NSMutableArray alloc] init];
-	for(Card* card in cards) {
-		[cardNames addObject: [card contents]];
-	}
-	
-	NSString* cardsString = [cardNames componentsJoinedByString: @" & "];
-	return cardsString;
+    NSMutableAttributedString* s = [[NSMutableAttributedString alloc] init];
+    [s appendAttributedString: [self cardsUnionMessage: cards]];
+    NSString* dontMatchString = [NSString stringWithFormat: @" don't match! %d points penalty!", points];
+    [s appendAttributedString: [[NSMutableAttributedString alloc] initWithString: dontMatchString]];
+    return s;
+}
+
+- (NSAttributedString*) cardsUnionMessage:(NSArray*) cards
+{
+    NSMutableAttributedString* s = [[NSMutableAttributedString alloc] init];    
+    int lastCardNumber = [cards count];
+    int currentCardNumber = 1;
+    for (Card* card in cards) {
+        [s appendAttributedString: [[NSMutableAttributedString alloc] initWithString: [card contents]]];
+        if (currentCardNumber < lastCardNumber) {
+            [s appendAttributedString: [[NSMutableAttributedString alloc] initWithString: @" & "]];
+        }
+    }
+    return s;
 }
 
 - (CardMatchingGame*) createNewGame

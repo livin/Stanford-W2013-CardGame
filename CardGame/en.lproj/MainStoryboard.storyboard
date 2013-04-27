@@ -282,11 +282,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Take a turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cx6-bC-k3T">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cx6-bC-k3T">
                                 <rect key="frame" x="25" y="331" width="275" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Take a turn">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="w9V-Bz-pEo">
@@ -352,6 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="321" y="78"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5sg-cw-eSa">
@@ -426,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdl-c9-bPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="757"/>
+            <point key="canvasLocation" x="321" y="719"/>
         </scene>
         <!--Set Game View Controller - Set-->
         <scene sceneID="rGc-3v-OOy">
@@ -906,11 +914,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Take a turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ouy-JI-V2k">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ouy-JI-V2k">
                                 <rect key="frame" x="25" y="331" width="275" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Take a turn">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nh7-ID-klL">
@@ -972,7 +987,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBC-r6-2IS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="156"/>
+            <point key="canvasLocation" x="798" y="78"/>
         </scene>
     </scenes>
     <classes>
@@ -994,6 +1009,7 @@
         <class className="GameResultViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultViewController.h"/>
             <relationships>
+                <relationship kind="action" name="resetAllScores:"/>
                 <relationship kind="outlet" name="display" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="sortSelectorControl" candidateClass="UISegmentedControl"/>
             </relationships>
