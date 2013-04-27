@@ -93,7 +93,7 @@
     NSMutableParagraphStyle* paragraph = [[NSMutableParagraphStyle alloc] init];
     paragraph.alignment = NSTextAlignmentCenter;
     
-    [s setAttributes: @{ NSFontAttributeName: [UIFont systemFontOfSize: 14], NSParagraphStyleAttributeName: paragraph}
+    [s addAttributes: @{ NSFontAttributeName: [UIFont systemFontOfSize: 14], NSParagraphStyleAttributeName: paragraph}
                range: NSMakeRange(0, s.string.length)];
     
     return s;
@@ -145,12 +145,17 @@
     int lastCardNumber = [cards count];
     int currentCardNumber = 1;
     for (Card* card in cards) {
-        [s appendAttributedString: [[NSMutableAttributedString alloc] initWithString: [card contents]]];
+        [s appendAttributedString: [self cardString: card]];
         if (currentCardNumber < lastCardNumber) {
             [s appendAttributedString: [[NSMutableAttributedString alloc] initWithString: @" & "]];
         }
     }
     return s;
+}
+
+- (NSAttributedString*) cardString:(Card*) card
+{
+    return [[NSMutableAttributedString alloc] initWithString: [card contents]];
 }
 
 - (CardMatchingGame*) createNewGame
