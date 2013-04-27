@@ -23,10 +23,10 @@
 @property (strong, nonatomic) CardMatchingGame* game;
 @property (nonatomic) BOOL firstFlipMade;
 @property (strong, nonatomic) GameResult* gameResult;
+@property (nonatomic) int cardsToOpen;
 @end
 
 @implementation CardGameViewController
-
 
 - (void) setFlipCount:(int)flipCount
 {
@@ -165,7 +165,9 @@
 - (CardMatchingGame*) createNewGame
 {
     Deck* deck = [[PlayingCardDeck alloc] init];
-    return [[CardMatchingGame alloc] initWithCardCount: [self.cardButtons count] usingDeck: deck];
+    CardMatchingGame* game = [[CardMatchingGame alloc] initWithCardCount: [self.cardButtons count] usingDeck: deck];
+    game.maxCardsToOpen = self.cardsToOpen?self.cardsToOpen:2;
+    return game;
 }
 
 - (CardMatchingGame*) game
@@ -202,8 +204,8 @@
 }
 
 - (IBAction)changedCardsToOpen:(UISegmentedControl *)sender {
-	int cardsToOpen = self.cardsToOpenControl.selectedSegmentIndex == 0 ? 2 : 3;
-	self.game.maxCardsToOpen = cardsToOpen;
+	self.cardsToOpen = self.cardsToOpenControl.selectedSegmentIndex == 0 ? 2 : 3;
+    self.game.maxCardsToOpen = self.cardsToOpen;
 }
 
 - (IBAction)historySlide:(UISlider *)sender {
