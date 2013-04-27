@@ -59,11 +59,13 @@
     SetCard* c2 = cards[0];
     SetCard* c3 = cards[1];
     
-    return
+    BOOL isSet =
         [SetCard allValuesSameOrDifferent: @[@(c1.number), @(c2.number), @(c3.number)]] &&
         [SetCard allValuesSameOrDifferent: @[@(c1.symbol), @(c2.symbol), @(c3.symbol)]] &&
         [SetCard allValuesSameOrDifferent: @[@(c1.color), @(c2.color), @(c3.color)]] &&
         [SetCard allValuesSameOrDifferent: @[@(c1.shading), @(c2.shading), @(c3.shading)]];
+    
+    return isSet? 4 : 0;
 }
 
 @end

@@ -35,7 +35,7 @@
     SetCard* c1 = [[SetCard alloc] initWithNumber:1 symbol: SYMBOL_CIRLE color: SETCOLOR_RED shading: SHADING_OPEN];
     SetCard* c2 = [[SetCard alloc] initWithNumber:2 symbol: SYMBOL_CIRLE color: SETCOLOR_RED shading: SHADING_OPEN];
     SetCard* c3 = [[SetCard alloc] initWithNumber:3 symbol: SYMBOL_CIRLE color: SETCOLOR_RED shading: SHADING_OPEN];
-    STAssertEquals(([c1 match: @[c2, c3]]), 1, @"Same parameters in all cards, but number varies in all cards - it's a Set");
+    STAssertEquals(([c1 match: @[c2, c3]]), 4, @"Same parameters in all cards, but number varies in all cards - it's a Set");
     
     c1 = [[SetCard alloc] initWithNumber:1 symbol: SYMBOL_CIRLE color: SETCOLOR_RED shading: SHADING_OPEN];
     c2 = [[SetCard alloc] initWithNumber:2 symbol: SYMBOL_SQUARE color: SETCOLOR_RED shading: SHADING_OPEN];
