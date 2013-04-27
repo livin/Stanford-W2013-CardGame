@@ -69,8 +69,7 @@
 	
 	self.scoreLabel.text = [NSString stringWithFormat: @"Score: %d", self.game.score];
 	
-	[self updateLastFlipMessage: self.game.lastFlipResult];
-	self.lastFlipResultLabel.alpha = 1;
+	[self updateLastFlipMessage: self.game.lastFlipResult pastFlip: NO];
 	
 	self.cardsToOpenControl.enabled = !self.firstFlipMade;
 	
@@ -80,9 +79,10 @@
 	[self.historySlider setValue: self.historySlider.maximumValue];
 }
 
-- (void) updateLastFlipMessage: (FlipResult*) flipResult
+- (void) updateLastFlipMessage: (FlipResult*) flipResult pastFlip: (BOOL) pastFlip
 {
     self.lastFlipResultLabel.text = [self cardMatchMessageForFlipResult: flipResult];
+    self.lastFlipResultLabel.alpha = pastFlip? 0.55 : 1;
 }
 
 - (NSString*) cardMatchMessageForFlipResult: (FlipResult*) flipResult
@@ -168,10 +168,8 @@
 	int index = self.historySlider.value;
 
 	if ([self.game.flipHistory count]) {
-		BOOL pastFlips = index < ([self.game.flipHistory count] - 1);
-		
-		self.lastFlipResultLabel.text = self.game.flipHistory[index];
-		self.lastFlipResultLabel.alpha = pastFlips? 0.55 : 1;
+		BOOL pastFlip = index < ([self.game.flipHistory count] - 1);		
+        [self updateLastFlipMessage: self.game.flipHistory[index] pastFlip: pastFlip];
 	}
 }
 
