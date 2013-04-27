@@ -21,7 +21,7 @@
     cardButton.backgroundColor = card.isFaceUp?[UIColor lightGrayColor]: [UIColor whiteColor];
     cardButton.selected = card.isFaceUp;
     cardButton.enabled = !card.isUnplayable;
-    cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
+    cardButton.alpha = card.isUnplayable ? 0.0 : 1.0;
     
     NSMutableAttributedString* a =
         [[NSMutableAttributedString alloc]
