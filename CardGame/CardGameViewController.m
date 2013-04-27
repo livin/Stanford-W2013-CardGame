@@ -92,8 +92,11 @@
     
     NSMutableParagraphStyle* paragraph = [[NSMutableParagraphStyle alloc] init];
     paragraph.alignment = NSTextAlignmentCenter;
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
     
-    [s addAttributes: @{ NSFontAttributeName: [UIFont systemFontOfSize: 14], NSParagraphStyleAttributeName: paragraph}
+    [s addAttributes: @{
+        NSFontAttributeName: [UIFont systemFontOfSize: 14],
+        NSParagraphStyleAttributeName: paragraph}
                range: NSMakeRange(0, s.string.length)];
     
     return s;
