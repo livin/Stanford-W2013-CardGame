@@ -332,7 +332,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Match" id="Jtg-m9-eil"/>
+                    <tabBarItem key="tabBarItem" title="Match" image="match-tab.png" id="Jtg-m9-eil"/>
                     <connections>
                         <outlet property="cardsToOpenControl" destination="7Fv-kc-WjP" id="NKg-Rt-gTa"/>
                         <outlet property="flipsLabel" destination="ute-YZ-RI2" id="b7T-cO-b2a"/>
@@ -426,7 +426,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scores" id="7Vb-kD-a7p"/>
+                    <tabBarItem key="tabBarItem" title="Scores" image="score-tab.png" id="7Vb-kD-a7p"/>
                     <connections>
                         <outlet property="display" destination="CrC-Ca-NO4" id="PSr-a9-5vt"/>
                         <outlet property="sortSelectorControl" destination="oK2-s0-8ZX" id="2tl-BG-s27"/>
@@ -953,7 +953,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Set" id="lKh-EA-dTr"/>
+                    <tabBarItem key="tabBarItem" title="Set" image="set-tab.png" id="lKh-EA-dTr"/>
                     <connections>
                         <outlet property="flipsLabel" destination="UOL-nv-13J" id="hdd-M8-ror"/>
                         <outlet property="historySlider" destination="WPh-Do-CJN" id="dX9-zg-YYx"/>
@@ -990,6 +990,11 @@
             <point key="canvasLocation" x="798" y="78"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="match-tab.png" width="30" height="30"/>
+        <image name="score-tab.png" width="30" height="30"/>
+        <image name="set-tab.png" width="30" height="30"/>
+    </resources>
     <classes>
         <class className="CardGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>

@@ -16,6 +16,9 @@
 		E744345717176FB6001BAC82 /* FlipResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E744345617176FB6001BAC82 /* FlipResult.m */; };
 		E744345817176FB6001BAC82 /* FlipResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E744345617176FB6001BAC82 /* FlipResult.m */; };
 		E744345B1717709C001BAC82 /* FlipResultTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E744345A1717709C001BAC82 /* FlipResultTest.m */; };
+		E767CE641730751900F06F4F /* match-tab.png in Resources */ = {isa = PBXBuildFile; fileRef = E767CE621730751900F06F4F /* match-tab.png */; };
+		E767CE651730751900F06F4F /* set-tab.png in Resources */ = {isa = PBXBuildFile; fileRef = E767CE631730751900F06F4F /* set-tab.png */; };
+		E767CE6917307B6F00F06F4F /* score-tab.png in Resources */ = {isa = PBXBuildFile; fileRef = E767CE6817307B6F00F06F4F /* score-tab.png */; };
 		E778872D1711F3AB0012B5E4 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E778872C1711F3AB0012B5E4 /* SetCard.m */; };
 		E778872E1711F3AB0012B5E4 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E778872C1711F3AB0012B5E4 /* SetCard.m */; };
 		E77887311711F3D60012B5E4 /* SetCardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E77887301711F3D60012B5E4 /* SetCardTest.m */; };
@@ -82,6 +85,9 @@
 		E744345617176FB6001BAC82 /* FlipResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipResult.m; path = Model/FlipResult.m; sourceTree = "<group>"; };
 		E74434591717709C001BAC82 /* FlipResultTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipResultTest.h; path = Model/FlipResultTest.h; sourceTree = "<group>"; };
 		E744345A1717709C001BAC82 /* FlipResultTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipResultTest.m; path = Model/FlipResultTest.m; sourceTree = "<group>"; };
+		E767CE621730751900F06F4F /* match-tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "match-tab.png"; sourceTree = "<group>"; };
+		E767CE631730751900F06F4F /* set-tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set-tab.png"; sourceTree = "<group>"; };
+		E767CE6817307B6F00F06F4F /* score-tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "score-tab.png"; sourceTree = "<group>"; };
 		E778872B1711F3AB0012B5E4 /* SetCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCard.h; path = Model/SetCard.h; sourceTree = "<group>"; };
 		E778872C1711F3AB0012B5E4 /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCard.m; path = Model/SetCard.m; sourceTree = "<group>"; };
 		E778872F1711F3D60012B5E4 /* SetCardTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCardTest.h; path = Model/SetCardTest.h; sourceTree = "<group>"; };
@@ -272,6 +278,9 @@
 			isa = PBXGroup;
 			children = (
 				E705092F1704EB1700CC4A83 /* cardback.png */,
+				E767CE621730751900F06F4F /* match-tab.png */,
+				E767CE631730751900F06F4F /* set-tab.png */,
+				E767CE6817307B6F00F06F4F /* score-tab.png */,
 				E7D4D4C516FA4F1F00408B8A /* CardGame-Info.plist */,
 				E7D4D4C616FA4F1F00408B8A /* InfoPlist.strings */,
 				E7D4D4C916FA4F1F00408B8A /* main.m */,
@@ -379,6 +388,9 @@
 				E7D4D4D416FA4F1F00408B8A /* Default-568h@2x.png in Resources */,
 				E7D4D4D716FA4F1F00408B8A /* MainStoryboard.storyboard in Resources */,
 				E70509301704EB1700CC4A83 /* cardback.png in Resources */,
+				E767CE641730751900F06F4F /* match-tab.png in Resources */,
+				E767CE651730751900F06F4F /* set-tab.png in Resources */,
+				E767CE6917307B6F00F06F4F /* score-tab.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
