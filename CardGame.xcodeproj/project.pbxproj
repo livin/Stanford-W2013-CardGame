@@ -58,6 +58,8 @@
 		E7D4D4FE16FA50C700408B8A /* DeckTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D4FD16FA50C700408B8A /* DeckTest.m */; };
 		E7D4D50116FA51D100408B8A /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D50016FA51D100408B8A /* Card.m */; };
 		E7D4D50216FA51D100408B8A /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4D50016FA51D100408B8A /* Card.m */; };
+		E7E79A391735A458004A9504 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E79A381735A458004A9504 /* SettingsViewController.m */; };
+		E7E79A3B1735A7F8004A9504 /* settings-tab.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E79A3A1735A7F8004A9504 /* settings-tab.png */; };
 		E7F1959C1710AB80000163EF /* GameResultTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F1959B1710AB80000163EF /* GameResultTest.m */; };
 		E7F1959F1710ABC9000163EF /* GameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F1959E1710ABC9000163EF /* GameResult.m */; };
 		E7F195A01710ABC9000163EF /* GameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F1959E1710ABC9000163EF /* GameResult.m */; };
@@ -140,6 +142,9 @@
 		E7D4D4FD16FA50C700408B8A /* DeckTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeckTest.m; path = Model/DeckTest.m; sourceTree = "<group>"; };
 		E7D4D4FF16FA51D100408B8A /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
 		E7D4D50016FA51D100408B8A /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
+		E7E79A371735A458004A9504 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E7E79A381735A458004A9504 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		E7E79A3A1735A7F8004A9504 /* settings-tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-tab.png"; sourceTree = "<group>"; };
 		E7F1959A1710AB80000163EF /* GameResultTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResultTest.h; path = Model/GameResultTest.h; sourceTree = "<group>"; };
 		E7F1959B1710AB80000163EF /* GameResultTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameResultTest.m; path = Model/GameResultTest.m; sourceTree = "<group>"; };
 		E7F1959D1710ABC9000163EF /* GameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResult.h; path = Model/GameResult.h; sourceTree = "<group>"; };
@@ -268,6 +273,8 @@
 				E778874117121D600012B5E4 /* SetGameViewController.m */,
 				E79178FD17115C4B00F90F3B /* GameResultViewController.h */,
 				E79178FE17115C4B00F90F3B /* GameResultViewController.m */,
+				E7E79A371735A458004A9504 /* SettingsViewController.h */,
+				E7E79A381735A458004A9504 /* SettingsViewController.m */,
 				E7D4D4C416FA4F1F00408B8A /* Supporting Files */,
 				E733B6CB16FF81320061ADB2 /* Model */,
 			);
@@ -281,6 +288,7 @@
 				E767CE621730751900F06F4F /* match-tab.png */,
 				E767CE631730751900F06F4F /* set-tab.png */,
 				E767CE6817307B6F00F06F4F /* score-tab.png */,
+				E7E79A3A1735A7F8004A9504 /* settings-tab.png */,
 				E7D4D4C516FA4F1F00408B8A /* CardGame-Info.plist */,
 				E7D4D4C616FA4F1F00408B8A /* InfoPlist.strings */,
 				E7D4D4C916FA4F1F00408B8A /* main.m */,
@@ -391,6 +399,7 @@
 				E767CE641730751900F06F4F /* match-tab.png in Resources */,
 				E767CE651730751900F06F4F /* set-tab.png in Resources */,
 				E767CE6917307B6F00F06F4F /* score-tab.png in Resources */,
+				E7E79A3B1735A7F8004A9504 /* settings-tab.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +450,7 @@
 				E778873E171216030012B5E4 /* SetGame.m in Sources */,
 				E778874217121D600012B5E4 /* SetGameViewController.m in Sources */,
 				E744345717176FB6001BAC82 /* FlipResult.m in Sources */,
+				E7E79A391735A458004A9504 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
