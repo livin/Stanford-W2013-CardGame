@@ -89,7 +89,7 @@
 - (void) testDescription
 {
     GameResult* gr = [self sampleGameResultWith15Scores];     
-    STAssertEqualObjects([gr description], @"Score: 15 (4/6/13 1:00PM 300s)", @"Game description should be 15 scores started on 4 April 2013 and took 600 secs (5 mins)");
+    STAssertEqualObjects([gr description], @"Match Score: 15 (4/6/13 1:00PM 300s)", @"Game description should be 15 scores started on 4 April 2013 and took 600 secs (5 mins)");
 }
 
 - (void) testSyncronize
@@ -111,15 +111,32 @@
 
 - (void) testInitFromPropertyList
 {
-    NSDictionary* plist = @{START_KEY: [self sampleDate100pm], END_KEY: [self sampleDate105pm], SCORE_KEY: @(15)};
+    NSDictionary* plist = @{START_KEY: [self sampleDate100pm], END_KEY: [self sampleDate105pm], SCORE_KEY: @(15), GAMETYPE_KEY: @(GAMETYPE_SET)};
     
     GameResult* gr = [[GameResult alloc] initFromPropertyList: plist];
     STAssertEqualObjects(gr.startTime,  [self sampleDate100pm], @"Start Time shold be sample 1:00PM time");
     STAssertEqualObjects(gr.endTime,  [self sampleDate105pm], @"End Time should be sample 1:05PM time");
     STAssertEquals(gr.score,  15, @"Score should be 15");
+    STAssertEquals(gr.gameType, GAMETYPE_SET, @"Game type should be GAMETYPE_SET");
     
     NSDictionary* broken = @{START_KEY: [self sampleDate100pm], SCORE_KEY: @(15)};    
     STAssertNil([[GameResult alloc] initFromPropertyList: broken], @"No game result should be created from broken plist");
+}
+
+- (void) testGameType
+{
+    GameResult* gr = [self sampleGameResultWith15Scores];
+    STAssertEquals(gr.gameType, GAMETYPE_MATCH, @"By default the game type should be GAMETYPE_MATCH");
+    
+    gr.gameType = GAMETYPE_SET;
+    STAssertEquals(gr.gameType, GAMETYPE_SET, @"Now gameType should be GAMETYPE_SET after setting it through property");    
+}
+
+- (void) testGameTypeString
+{
+    GameResult* gr = [[GameResult alloc] init];
+    gr.gameType = GAMETYPE_SET;
+    STAssertEquals([gr gameTypeString], @"Set", @"Game type string should be Set");
 }
 
 @end

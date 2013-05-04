@@ -182,9 +182,14 @@
 - (GameResult*) gameResult
 {
     if (!_gameResult)
-        _gameResult = [[GameResult alloc] init];
+        _gameResult = [self createGameResult];
     
     return _gameResult;
+}
+
+- (GameResult*) createGameResult
+{
+    return [[GameResult alloc] init];
 }
 
 - (IBAction)flipCard:(UIButton *)sender {

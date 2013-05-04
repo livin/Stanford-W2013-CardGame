@@ -36,6 +36,11 @@ static NSUserDefaults* userDefaults;
     return gameResults;
 }
 
++ (NSArray*) gameTypeStrings
+{
+    return @[@"Match", @"Set"];
+}
+
 + (NSDateFormatter*) dateFormatter
 {
     if (!dateFormatter) {
@@ -65,6 +70,7 @@ static NSUserDefaults* userDefaults;
             _startTime = dictionary[START_KEY];
             _endTime = dictionary[END_KEY];
             _score = [((NSNumber*)dictionary[SCORE_KEY]) intValue];
+            _gameType = [((NSNumber*)dictionary[GAMETYPE_KEY]) intValue];
             
             if (!_startTime || !_endTime)
                 self = nil;
@@ -88,7 +94,7 @@ static NSUserDefaults* userDefaults;
 - (NSString*) description
 {
     NSString* startTimeString = [[[self class] dateFormatter] stringFromDate: self.startTime];
-    return [NSString stringWithFormat: @"Score: %d (%@ %.0fs)", self.score, startTimeString, [self duration]];
+    return [NSString stringWithFormat: @"%@ Score: %d (%@ %.0fs)", [self gameTypeString], self.score, startTimeString, [self duration]];
 }
 
 - (void) synchronize
@@ -106,7 +112,7 @@ static NSUserDefaults* userDefaults;
 
 - (NSDictionary*) asPropertyList
 {
-    return @{START_KEY: self.startTime, END_KEY: self.endTime, SCORE_KEY: @(self.score)};
+    return @{START_KEY: self.startTime, END_KEY: self.endTime, SCORE_KEY: @(self.score), GAMETYPE_KEY: @(self.gameType)};
 }
 
 - (NSComparisonResult) compareByDate: (GameResult*) another
@@ -124,5 +130,9 @@ static NSUserDefaults* userDefaults;
     return [@([self duration]) compare: @([another duration])];
 }
 
+- (NSString*) gameTypeString
+{
+    return [[self class] gameTypeStrings][[self gameType]];
+}
 
 @end

@@ -79,5 +79,13 @@
     return [[SetGame alloc] initWithCardCount: 24];
 }
 
+- (GameResult*) createGameResult
+{
+    GameResult* gameResult = [[GameResult alloc] init];
+    gameResult.gameType = GAMETYPE_SET;
+    return gameResult;
+}
+
+
 
 @end
