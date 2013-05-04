@@ -25,7 +25,17 @@ Game Scores
 
 ![Game Scores Screenshot](screenshot-scores.png)
 
+Settings
+
+![Settings Screenshot](screenshot-settings.png)
+
 ## Release Notes
+
+### Assignment 2 with Extra Credits Release: 5 May April 2013
+This includes full Assignment 2 implementation with all extra credits added:
+ - Beautiful icons for all tabs: Match, Set, Scores and Settings.
+ - Game Scores for Match and Set Games
+ - Settings tab which now allows to reset all score history.
 
 ### Assignment 2 Release: 27 April 2013
 Main feature of this release is a Set Card Game support including following features:
