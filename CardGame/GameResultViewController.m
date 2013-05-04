@@ -35,9 +35,31 @@
 
 - (void) updateDisplay
 {
-    NSArray* results = [[GameResult allGameResults] sortedArrayUsingSelector:[self sortSelector]];
-        
-    self.display.text = [results componentsJoinedByString: @"\n"];
+    NSMutableArray* matchGameResults = [[NSMutableArray alloc] init];
+    NSMutableArray* setGameResults = [[NSMutableArray alloc] init];
+    
+    for(GameResult* gameResult in [GameResult allGameResults]) {
+        if (gameResult.gameType == GAMETYPE_MATCH) {
+            [matchGameResults addObject: gameResult];
+        } else if (gameResult.gameType == GAMETYPE_SET) {
+            [setGameResults addObject: gameResult];
+        }
+    }
+    
+    NSString* matchGameResultsString = [self sortedGameResultsString: matchGameResults header: @"Match Games"];
+    NSString* setGameResultsString = [self sortedGameResultsString: setGameResults header: @"Set Games"];
+    
+    self.display.text = [@[matchGameResultsString, setGameResultsString] componentsJoinedByString: @"\n"];
+}
+
+- (NSString*) sortedGameResultsString: (NSArray*) unsortedGameResults header: (NSString*) header
+{
+    NSArray* results = [unsortedGameResults sortedArrayUsingSelector:[self sortSelector]];
+    NSString* gameLines = [results componentsJoinedByString: @"\n"];
+    
+    NSString* result = [[[header stringByAppendingString: @"\n\n"] stringByAppendingString: gameLines] stringByAppendingString: @"\n"];
+    
+    return result;
 }
 
 - (IBAction)sprtSelectionChanged {
